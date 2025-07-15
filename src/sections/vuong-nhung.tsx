@@ -6,6 +6,10 @@ import { HeroSection } from "./hero-section/hero-section";
 import { AudioSection } from "./audio-section/audio";
 import { FloatingNav } from "./floating-nav/floating-nav";
 import { WeddingDaySection } from "./wedding-day-section/wedding-day-section";
+import { CountdownSection } from "./countdown-section/countdown-section";
+import LeafFall from "@/components/LeafFall";
+import Snowflakes from "@/components/LeafFall";
+import { CoupleIntroSection } from "./couple-intro-section/couple-intro-section";
 
 // Types for component props
 interface WeddingInvitationProps {
@@ -121,107 +125,10 @@ const VuongNhungWeddingInvitation: React.FC<WeddingInvitationProps> = ({
       <WeddingDaySection />
 
       {/* Countdown Section */}
-      <section id="countdown" className="countdown-section">
-        <div className="container">
-          <div className="countdown-content">
-            <div className="countdown-timer">
-              <div className="countdown-item">
-                <span className="countdown-number">
-                  {String(countdown.days).padStart(2, "0")}
-                </span>
-                <span className="countdown-label">Ngày</span>
-              </div>
-              <div className="countdown-item">
-                <span className="countdown-number">
-                  {String(countdown.hours).padStart(2, "0")}
-                </span>
-                <span className="countdown-label">Giờ</span>
-              </div>
-              <div className="countdown-item">
-                <span className="countdown-number">
-                  {String(countdown.minutes).padStart(2, "0")}
-                </span>
-                <span className="countdown-label">Phút</span>
-              </div>
-              <div className="countdown-item">
-                <span className="countdown-number">
-                  {String(countdown.seconds).padStart(2, "0")}
-                </span>
-                <span className="countdown-label">Giây</span>
-              </div>
-            </div>
-            <p className="countdown-text">
-              Until we officially become Mr. & Mrs.
-            </p>
-
-            <div className="countdown-images">
-              <div
-                className="countdown-image left"
-                onClick={() => openGallery(0)}
-              ></div>
-              <div className="countdown-image center"></div>
-              <div
-                className="countdown-image right"
-                onClick={() => openGallery(1)}
-              ></div>
-            </div>
-
-            <h2 className="couple-names-countdown">Văn Vương & Ngọc Nhung</h2>
-            <h3 className="happy-wedding">Happy Wedding</h3>
-          </div>
-        </div>
-      </section>
+      {/* <CountdownSection /> */}
 
       {/* Couple Introduction Section */}
-      <section id="couple-intro" className="couple-section">
-        <div className="container">
-          <h2 className="couple-names-intro">Văn Vương & Ngọc Nhung</h2>
-
-          <div className="family-info">
-            <div className="family-side">
-              <h3>Nhà Trai</h3>
-              <p>
-                Ông: <strong>Nguyễn Văn Thành</strong>
-              </p>
-              <p>
-                Bà: <strong>Nguyễn Thị Mai</strong>
-              </p>
-              <p>
-                Bà: <strong>Nguyễn Thị Liên</strong>
-              </p>
-            </div>
-            <div className="family-side">
-              <h3>Nhà Gái</h3>
-            </div>
-          </div>
-
-          <div className="couple-profiles">
-            <div className="profile groom">
-              <div
-                className="profile-image"
-                onClick={() => openGallery(2)}
-              ></div>
-              <h3>Văn Vương</h3>
-              <p>
-                Đối với chúng mình hôn nhân không phải là đích đến cuối của tình
-                yêu mà là khởi đầu của hạnh phúc.
-              </p>
-            </div>
-
-            <div className="profile bride">
-              <div
-                className="profile-image"
-                onClick={() => openPopup("brideGallery")}
-              ></div>
-              <h3>Ngọc Nhung</h3>
-              <p>
-                Ở thời điểm phù hợp nhất, khoác lên mình bộ váy cưới đẹp nhất,
-                gả cho người đáng tin cậy nhất, là anh.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CoupleIntroSection openGallery={openGallery} openPopup={openPopup} />
 
       {/* Wedding Moments Section */}
       <section id="wedding-moments" className="moments-section">
@@ -380,21 +287,7 @@ const VuongNhungWeddingInvitation: React.FC<WeddingInvitationProps> = ({
       )}
 
       {/* Snowflakes Animation */}
-      <div className="snowflakes" aria-hidden="true">
-        {Array.from({ length: 10 }, (_, i) => (
-          <div
-            key={i}
-            className="snowflake"
-            style={{
-              left: `${i * 10}%`,
-              animationDelay: `${i * 0.5}s`,
-              fontSize: i % 3 === 0 ? "20px" : "16px",
-            }}
-          >
-            {i % 2 === 0 ? "♥️" : "❅"}
-          </div>
-        ))}
-      </div>
+      <Snowflakes />
     </div>
   );
 };

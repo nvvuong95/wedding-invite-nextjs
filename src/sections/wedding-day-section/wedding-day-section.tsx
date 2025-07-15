@@ -6,14 +6,13 @@ import {
   Container,
   Typography,
   Card,
-  CardContent,
   Divider,
   Link,
   Paper,
-  Fade,
 } from "@mui/material";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import { CountdownSection } from "../countdown-section/countdown-section";
 
 export const WeddingDaySection = () => {
   return (
@@ -45,7 +44,7 @@ export const WeddingDaySection = () => {
             Wedding Day
           </Typography>
         </FadeInOnScroll>
-        <FadeInOnScroll direction="up" delay={300}>
+        {/* <FadeInOnScroll direction="up" delay={300}>
           <Typography
             align="center"
             color="text.secondary"
@@ -59,17 +58,14 @@ export const WeddingDaySection = () => {
             Chúng tôi hân hoan chào đón sự hiện diện của bạn trong ngày trọng
             đại này!
           </Typography>
-        </FadeInOnScroll>
+        </FadeInOnScroll> */}
         <FadeInOnScroll direction="up" delay={1000}>
           <Card
             elevation={6}
             sx={{
-              mt: 2,
+              mt: 10,
               display: "grid",
               gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-              overflow: "hidden",
-              borderRadius: 5,
-              boxShadow: "0 8px 32px 0 rgba(171, 71, 188, 0.18)",
               background: "rgba(255,255,255,0.95)",
               minHeight: 400,
             }}
@@ -82,6 +78,7 @@ export const WeddingDaySection = () => {
                 justifyContent: "center",
                 position: "relative",
                 overflow: "hidden",
+                boxShadow: "rgb(0, 0, 0) -10px 15px 20px -15px", // Left shadow for left box
               }}
             >
               <Box
@@ -162,7 +159,7 @@ export const WeddingDaySection = () => {
                       mt: 2,
                       mb: 0.5,
                       fontFamily: '"UVN Moi Hong", cursive',
-                      fontSize: 18,
+                      fontSize: 32,
                     }}
                   >
                     Save The Date
@@ -249,6 +246,7 @@ export const WeddingDaySection = () => {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 background: "transparent",
+                boxShadow: "rgb(0, 0, 0) 10px 15px 20px -15px",
               }}
             >
               <Box
@@ -309,19 +307,19 @@ export const WeddingDaySection = () => {
                       mb: 0.5,
                     }}
                   >
-                    Queen Plaza Tân Bình
+                    Tại: Queen Plaza Tân Bình
                   </Typography>
                   {/* <Typography
-                    variant="body2"
-                    sx={{
-                      fontWeight: 700,
-                      color: "#7c43bd",
-                      letterSpacing: 1,
-                      mb: 1,
-                    }}
-                  >
-                    TIỆC BÁO HỈ
-                  </Typography> */}
+                variant="body2"
+                sx={{
+                  fontWeight: 700,
+                  color: "#7c43bd",
+                  letterSpacing: 1,
+                  mb: 1,
+                }}
+                >
+                TIỆC BÁO HỈ
+                </Typography> */}
                   <Typography
                     variant="body2"
                     sx={{
@@ -412,6 +410,8 @@ export const WeddingDaySection = () => {
           </Card>
         </FadeInOnScroll>
       </Container>
+
+      <CountdownSection />
     </Box>
   );
 };

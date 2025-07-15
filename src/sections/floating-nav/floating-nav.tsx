@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { Box, Button, IconButton, Drawer, Stack } from "@mui/material";
+import {
+  Box,
+  Button,
+  IconButton,
+  Drawer,
+  Stack,
+  SpeedDial,
+  SpeedDialAction,
+} from "@mui/material";
 import { Icon } from "@iconify/react";
 
 export const FloatingNav = () => {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const openGallery = () => {
-    alert("Open gallery!");
-  };
-
   return (
     <Box
       sx={{
@@ -21,108 +23,95 @@ export const FloatingNav = () => {
         alignItems: "flex-end",
       }}
     >
-      <Drawer
-        anchor="right"
-        open={showMenu}
-        onClose={() => setShowMenu(false)}
-        PaperProps={{
-          sx: { width: 260, p: 2, borderRadius: "16px 0 0 16px" },
+      <Box
+        sx={{
+          position: "fixed",
+          bottom: 24,
+          right: 24,
+          display: "flex",
+          flexDirection: "column",
+          gap: 3,
+          p: 1,
+          zIndex: 1300,
         }}
       >
-        <Stack spacing={2} sx={{ mt: 2 }}>
-          <Button
-            startIcon={<Icon icon="mdi:map-marker" />}
+        <SpeedDial
+          ariaLabel="SpeedDial"
+          sx={{
+            width: 48,
+            borderRadius: "50%",
+            "& .MuiFab-primary": {
+              bgcolor: "#797171",
+              color: "white",
+              "&:hover": {
+                bgcolor: "#5a5a5a",
+              },
+            },
+            // Remove animation from SpeedDial container
+          }}
+          icon={
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                animation: "floatingNavPulse 2s infinite",
+                "@keyframes floatingNavPulse": {
+                  "0%": { transform: "scale(1)" },
+                  "50%": { transform: "scale(1.15)" },
+                  "100%": { transform: "scale(1)" },
+                },
+              }}
+            >
+              <Icon icon="mdi:format-list-bulleted" fontSize={20} />
+            </Box>
+          }
+        >
+          <SpeedDialAction
+            key="location"
+            icon={<Icon icon="mdi:map-marker" fontSize={25} />}
+            tooltipTitle="Địa điểm"
             onClick={() => {
-              setShowMenu(false);
               document
                 .getElementById("wedding-day")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            variant="outlined"
-            color="primary"
-          >
-            Địa điểm
-          </Button>
-          <Button
-            startIcon={<Icon icon="mdi:email" />}
+          />
+          <SpeedDialAction
+            key="invite"
+            icon={<Icon icon="mdi:email" />}
+            tooltipTitle="Thiệp mời"
             onClick={() => {
-              setShowMenu(false);
               document
                 .getElementById("wedding-day")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            variant="outlined"
-            color="primary"
-          >
-            Thiệp mời
-          </Button>
-          <Button
-            startIcon={<Icon icon="mdi:heart" />}
+          />
+          <SpeedDialAction
+            key="couple"
+            icon={<Icon icon="mdi:account-group" />}
+            tooltipTitle="Chân dung cô dâu chú rể"
             onClick={() => {
-              setShowMenu(false);
-              document
-                .getElementById("love-story")
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-            variant="outlined"
-            color="primary"
-          >
-            Câu chuyện
-          </Button>
-          <Button
-            startIcon={<Icon icon="mdi:account-group" />}
-            onClick={() => {
-              setShowMenu(false);
               document
                 .getElementById("couple-intro")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            variant="outlined"
-            color="primary"
-          >
-            Chân dung cô dâu chú rể
-          </Button>
-          <Button
-            startIcon={<Icon icon="mdi:camera" />}
-            onClick={() => {
-              setShowMenu(false);
-              openGallery();
-            }}
-            variant="outlined"
-            color="primary"
-          >
-            Hình ảnh
-          </Button>
-        </Stack>
+          />
+        </SpeedDial>
         <IconButton
-          sx={{ position: "absolute", top: 8, right: 8 }}
-          onClick={() => setShowMenu(false)}
-        >
-          <Icon icon="mdi:close" />
-        </IconButton>
-      </Drawer>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          gap: 1,
-          background: "rgba(255,255,255,0.85)",
-          borderRadius: "24px",
-          boxShadow: 3,
-          p: 1,
-        }}
-      >
-        <IconButton
-          color="primary"
-          onClick={() => setShowMenu(true)}
-          sx={{ bgcolor: "background.paper" }}
-        >
-          <Icon icon="mdi:menu" />
-        </IconButton>
-        <IconButton
-          color="primary"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          sx={{ bgcolor: "background.paper" }}
+          sx={{
+            borderRadius: "50%",
+            width: 50,
+            height: 50,
+            boxShadow: 2,
+            bgcolor: "#797171",
+            color: "white",
+            "&:hover": {
+              bgcolor: "#5a5a5a",
+            },
+            transition: "background-color 0.3s ease",
+          }}
         >
           <Icon icon="mdi:arrow-up" />
         </IconButton>
