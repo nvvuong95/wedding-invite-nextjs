@@ -6,7 +6,7 @@ const LANGUAGE_TEXT = {
     xemThem: "더보기",
   },
   vi: {
-    headline: "Khoảnh khắc cưới",
+    headline: "Love Moments",
     xemThem: "Xem thêm",
   },
 };
