@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { Box, IconButton } from "@mui/material";
 import { Icon } from "@iconify/react";
 
@@ -95,7 +95,9 @@ export const AudioSection = () => {
                 Nhạc nền
               </Box>
               <Box sx={{ fontSize: 13, color: "#6b7280" }}>
-                "Perfect" - Ed Sheeran
+                <span style={{ fontStyle: "italic" }}>
+                  {isPlaying ? "Đang phát" : "Nhấn để phát nhạc"}
+                </span>
               </Box>
             </Box>
             <IconButton

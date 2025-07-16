@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from "react";
 
 function debounce<T extends (...args: any[]) => void>(fn: T, delay: number): T {
   let timer: ReturnType<typeof setTimeout>;
@@ -14,14 +14,14 @@ export const useBottomPadding = () => {
   const [bottomBarPadding, setBottomBarPadding] = useState<number>(0);
 
   useLayoutEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
     const updatePadding = debounce(() => {
       // Create a temporary element to measure 100vh in pixels
-      const temp = document.createElement('div');
-      temp.style.height = '100vh';
-      temp.style.position = 'absolute';
-      temp.style.visibility = 'hidden';
-      temp.style.pointerEvents = 'none';
+      const temp = document.createElement("div");
+      temp.style.height = "100vh";
+      temp.style.position = "absolute";
+      temp.style.visibility = "hidden";
+      temp.style.pointerEvents = "none";
       document.body.appendChild(temp);
       const vh100 = temp.offsetHeight;
       document.body.removeChild(temp);
@@ -35,11 +35,11 @@ export const useBottomPadding = () => {
       }
     }, 100);
 
-    window.addEventListener('resize', updatePadding);
+    window.addEventListener("resize", updatePadding);
     updatePadding();
 
     return () => {
-      window.removeEventListener('resize', updatePadding);
+      window.removeEventListener("resize", updatePadding);
     };
   }, []);
 
