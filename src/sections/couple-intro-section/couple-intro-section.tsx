@@ -8,7 +8,7 @@ const LANGUAGE_TEXT = {
     groomFamily: "신랑 가족",
     brideFamily: "신부 가족",
     groomParents: "아버지: Nguyen Van Thanh<br/> 어머니: Nguyen Thi Mai",
-    brideParents: "아버지: Nguyen Thi Lien",
+    brideParents: "어머니: Nguyen Thi Lien",
     groomIntroduction: "우리에게 결혼은 사랑의 끝이 아니라 행복의 시작입니다.",
     brideIntroduction:
       "가장 적절한 순간에, 가장 아름다운 웨딩드레스를 입고, 가장 믿을 수 있는 사람과 결혼하는 것, 그 사람이 바로 당신입니다.",
