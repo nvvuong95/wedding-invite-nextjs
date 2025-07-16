@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Box, IconButton } from "@mui/material";
 import { Icon } from "@iconify/react";
 
@@ -18,15 +18,15 @@ export const AudioSection = () => {
     }
   };
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (audioRef.current && !isPlaying) {
-  //       audioRef.current.play().catch(() => {});
-  //     }
-  //   }, 3000);
-  //   return () => clearTimeout(timer);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (audioRef.current && !isPlaying) {
+        audioRef.current.play().catch(() => {});
+      }
+    }, 3000);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Box
