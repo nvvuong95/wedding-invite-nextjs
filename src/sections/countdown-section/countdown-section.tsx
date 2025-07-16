@@ -1,6 +1,40 @@
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 import React, { useEffect, useState } from "react";
-import { Box, Typography, Paper, Stack } from "@mui/material";
-import { motion, AnimatePresence } from "framer-motion";
+// Simple animated countdown text component
+const AnimatedCountdownText = ({ value }: { value: number }) => {
+  const [displayValue, setDisplayValue] = useState(value);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    if (value !== displayValue) {
+      setAnimate(true);
+      const timeout = setTimeout(() => {
+        setDisplayValue(value);
+        setAnimate(false);
+      }, 200); // animation duration
+      return () => clearTimeout(timeout);
+    }
+  }, [value, displayValue]);
+
+  return (
+    <span
+      style={{
+        minWidth: 32,
+        fontWeight: 700,
+        fontSize: "2rem",
+        borderRadius: "12px",
+        transition:
+          "transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.4s, background 0.4s, opacity 0.4s",
+        transform: animate
+          ? "scale(1.18) rotate(-3deg)"
+          : "scale(1) rotate(0deg)",
+        opacity: animate ? 0.85 : 1,
+      }}
+    >
+      {displayValue}
+    </span>
+  );
+};
 
 const targetDate = new Date("2025-11-08T18:00:00");
 
@@ -16,7 +50,28 @@ const getCountdown = () => {
   return { days, hours, minutes, seconds };
 };
 
-export const CountdownSection = () => {
+type CountdownSectionProps = {
+  lang?: "vi" | "ko";
+};
+
+const LANGUAGE_TEXT: Record<string, any> = {
+  vi: {
+    days: "Ngày",
+    hours: "Giờ",
+    minutes: "Phút",
+    seconds: "Giây",
+    weddingMessage: "Là ngày cưới của chúng mình! 💍🎉",
+  },
+  ko: {
+    days: "일",
+    hours: "시간",
+    minutes: "분",
+    seconds: "초",
+    weddingMessage: "우리의 결혼식 날이에요! 💍🎉",
+  },
+};
+
+export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
   const [countdown, setCountdown] = useState(getCountdown());
 
   useEffect(() => {
@@ -27,148 +82,123 @@ export const CountdownSection = () => {
   }, []);
 
   return (
-    <Box
-      id="countdown"
-      sx={{
-        py: { xs: 6, md: 12 },
-      }}
-    >
-      <Box
-        sx={{
-          maxWidth: 600,
-          mx: "auto",
-          textAlign: "center",
-          px: { xs: 2, md: 0 },
-        }}
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+    <div id="SECTION356" className="ladi-section">
+      <div className="ladi-section-background"></div>
+      <div className="ladi-container">
+        <div id="SHAPE435" className="ladi-element">
+          <div className="ladi-shape">
+            <img src="/images/svg/wedding-ring.svg" alt="Wedding Ring" />
+          </div>
+        </div>
+        <FadeInOnScroll
+          delay={0.5}
+          direction="up"
+          id="IMAGE417"
+          className="ladi-element"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            <Typography
-              variant="h4"
-              sx={{
-                fontFamily: "Dancing Script, cursive",
-                color: "#c97b63",
-                mb: 2,
-                fontWeight: 700,
-                letterSpacing: 1,
-                fontSize: { xs: 28, md: 34 },
-              }}
-            >
-              Đếm ngược đến ngày cưới
-            </Typography>
-          </motion.div>
-        </motion.div>
-        <Box sx={{ mb: 4, display: "flex", justifyContent: "center" }}>
-          <Stack direction="row" spacing={{ xs: 1.5, md: 3 }}>
-            {[
-              { label: "Ngày", value: countdown.days },
-              { label: "Giờ", value: countdown.hours },
-              { label: "Phút", value: countdown.minutes },
-              { label: "Giây", value: countdown.seconds },
-            ].map((item) => (
-              <motion.div
-                key={item.label}
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+          <div className="ladi-image">
+            <div className="ladi-image-background"></div>
+          </div>
+        </FadeInOnScroll>
+        <div id="BOX416" className="ladi-element">
+          <div className="ladi-box ladi-transition"></div>
+        </div>
+        <div id="BOX417" className="ladi-element">
+          <div className="ladi-box ladi-transition"></div>
+        </div>
+        <div id="BOX418" className="ladi-element">
+          <div className="ladi-box ladi-transition"></div>
+        </div>
+        <div id="BOX419" className="ladi-element">
+          <div className="ladi-box ladi-transition"></div>
+        </div>
+        <div id="COUNTDOWN345" className="ladi-element">
+          <div className="ladi-countdown">
+            {["days", "hours", "minutes", "seconds"].map((key, idx) => (
+              <div
+                key={key}
+                id={`COUNTDOWN_ITEM${375 + idx}`}
+                className="ladi-element"
               >
-                <Paper
-                  elevation={0}
-                  sx={{
-                    px: { xs: 2, sm: 3, md: 4 },
-                    py: { xs: 2, sm: 3, md: 4 },
-                    borderRadius: 3,
-                    background:
-                      "linear-gradient(135deg, #fff3e0 60%, #ffe0e0 100%)",
-                    boxShadow: "none",
-                    width: { xs: 70, sm: 100, md: 130 },
-                    height: { xs: 70, sm: 100, md: 130 },
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    position: "relative",
-                  }}
-                >
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={item.value}
-                      initial={{ y: -20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: 20, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      style={{
-                        position: "relative",
-                        zIndex: 1,
-                        marginTop: 0,
-                        marginBottom: 4,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        height: "60%",
-                      }}
-                    >
-                      <Typography
-                        variant="h3"
-                        sx={{
-                          color: "#c97b63",
-                          fontWeight: 700,
-                          letterSpacing: 2,
-                          mb: 0.5,
-                          fontFamily: "Dancing Script, cursive",
-                          fontSize: { xs: 26, sm: 32, md: 38 },
-                        }}
-                      >
-                        {String(item.value).padStart(2, "0")}
-                      </Typography>
-                    </motion.div>
-                  </AnimatePresence>
-                  <Typography
-                    variant="subtitle1"
-                    sx={{
-                      color: "#a0522d",
-                      fontWeight: 500,
-                      fontFamily: "Montserrat, sans-serif",
-                      fontSize: { xs: 14, md: 18 },
-                      letterSpacing: 1,
-                      position: "relative",
-                      zIndex: 1,
-                      mt: 0.5,
-                    }}
-                  >
-                    {item.label}
-                  </Typography>
-                </Paper>
-              </motion.div>
+                <div className="ladi-countdown-background"></div>
+                <div className="ladi-countdown-text">
+                  <AnimatedCountdownText
+                    value={countdown[key as keyof typeof countdown]}
+                  />
+                </div>
+              </div>
             ))}
-          </Stack>
-        </Box>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          </div>
+        </div>
+        <div id="PARAGRAPH561" className="ladi-element">
+          <div className="ladi-paragraph">{LANGUAGE_TEXT[lang].days}</div>
+        </div>
+        <div id="PARAGRAPH562" className="ladi-element">
+          <div className="ladi-paragraph">{LANGUAGE_TEXT[lang].hours}</div>
+        </div>
+        <div id="PARAGRAPH563" className="ladi-element">
+          <div className="ladi-paragraph">{LANGUAGE_TEXT[lang].minutes}</div>
+        </div>
+        <div id="PARAGRAPH564" className="ladi-element">
+          <div className="ladi-paragraph">{LANGUAGE_TEXT[lang].seconds}</div>
+        </div>
+        <div id="PARAGRAPH565" className="ladi-element">
+          <div className="ladi-paragraph">
+            {LANGUAGE_TEXT[lang].weddingMessage}
+          </div>
+        </div>
+        <FadeInOnScroll
+          delay={0.5}
+          direction="left"
+          id="IMAGE418"
+          className="ladi-element"
         >
-          <Typography
-            variant="subtitle2"
-            sx={{
-              color: "#c97b63",
-              fontFamily: "Dancing Script, cursive",
-              fontSize: { xs: 16, md: 22 },
-              mt: 2,
-            }}
-          >
-            Hân hoan chào đón bạn đến dự lễ cưới của chúng tôi!
-          </Typography>
-        </motion.div>
-      </Box>
-    </Box>
+          <div className="ladi-image">
+            <div className="ladi-image-background"></div>
+          </div>
+        </FadeInOnScroll>
+        <FadeInOnScroll
+          delay={1}
+          direction="up"
+          id="HEADLINE465"
+          className="ladi-element"
+        >
+          <h3 className="ladi-headline">
+            Văn Vương&nbsp; &amp; Ngọc Nhung
+            <br />
+          </h3>
+        </FadeInOnScroll>
+        <FadeInOnScroll
+          delay={1}
+          direction="up"
+          id="HEADLINE466"
+          className="ladi-element"
+        >
+          <div id="HEADLINE466" className="ladi-element">
+            <h3 className="ladi-headline">Happy Wedding</h3>
+          </div>
+        </FadeInOnScroll>
+        <FadeInOnScroll
+          delay={0.5}
+          direction="right"
+          id="IMAGE419"
+          className="ladi-element"
+        >
+          <div className="ladi-image">
+            <div className="ladi-image-background"></div>
+          </div>
+        </FadeInOnScroll>
+        <FadeInOnScroll
+          delay={1}
+          direction="up"
+          id="IMAGE420"
+          className="ladi-element"
+        >
+          <div className="ladi-image">
+            <div className="ladi-image-background"></div>
+          </div>
+        </FadeInOnScroll>
+      </div>
+    </div>
   );
 };

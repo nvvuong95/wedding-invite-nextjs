@@ -4,9 +4,10 @@ import { useEffect, useRef } from "react";
 
 interface FadeInOnScrollProps {
   children: React.ReactNode;
-  direction?: "up" | "down" | "left" | "right";
+  direction?: "up" | "down" | "left" | "right" | "bounce" | "bounceIn";
   delay?: number; // ms
   className?: string;
+  id?: string;
 }
 
 export default function FadeInOnScroll({
@@ -14,6 +15,7 @@ export default function FadeInOnScroll({
   direction = "up",
   delay = 0,
   className = "",
+  id,
 }: FadeInOnScrollProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -24,9 +26,16 @@ export default function FadeInOnScroll({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            el.classList.add(`fadein-${direction}`);
-          }, delay);
+          const fadeClass = `fadein-${direction}`;
+          if (delay > 0) {
+            setTimeout(() => {
+              el.classList.remove("before-animate");
+              el.classList.add(fadeClass);
+            }, delay);
+          } else {
+            el.classList.remove("before-animate");
+            el.classList.add(fadeClass);
+          }
           observer.unobserve(el);
         }
       },
@@ -39,7 +48,7 @@ export default function FadeInOnScroll({
   }, [direction, delay]);
 
   return (
-    <div ref={ref} className={`opacity-0 ${className}`}>
+    <div ref={ref} id={id} className={`before-animate ${className}`}>
       {children}
     </div>
   );

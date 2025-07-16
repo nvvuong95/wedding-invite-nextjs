@@ -1,417 +1,234 @@
 "use client";
-import React from "react";
-import {
-  Box,
-  Button,
-  Container,
-  Typography,
-  Card,
-  Divider,
-  Link,
-  Paper,
-} from "@mui/material";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
-import { CountdownSection } from "../countdown-section/countdown-section";
+import React from "react";
 
-export const WeddingDaySection = () => {
+type WeddingDaySectionProps = {
+  lang?: "vi" | "ko";
+};
+
+const LANGUAGE_TEXT = {
+  vi: {
+    headline: "Wedding Day",
+    paragraph: "TRÂN TRỌNG KÍNH MỜI",
+    button: "Chỉ đường",
+    venue: "Tại : Queen Plaza Tân Bình",
+    date: "Thứ 7, ngày 08 tháng 11 năm 2025",
+    time: "Tổ chức vào lúc 18 giờ 00 phút",
+    address:
+      "Sảnh Queen 8 - Tầng 3, 91B2 Phạm Văn Hai, Phường 3, Tân Bình, Hồ Chí Minh",
+    dateDetail: "Thứ 7, ngày 08 tháng 11 năm 2025",
+    lunarDate: "(Tức ngày 19 tháng 09 năm Ất Tỵ)",
+    invitation: [
+      "Tới dự bữa Tiệc <b>Báo Hỉ</b> cùng gia đình chúng tôi",
+      "Sự hiện diện của quý khách là niềm vinh dự cho gia đình chúng tôi!",
+      "Chúng tôi rất mong được đón tiếp quý khách tại buổi tiệc đặc biệt này.",
+    ],
+    eventType: "TIỆC BÁO HỈ",
+    guest: "Quý khách",
+  },
+  ko: {
+    headline: "결혼식 날",
+    paragraph: "진심으로 초대합니다",
+    button: "길찾기",
+    venue: "장소 : 퀸 플라자 탄빈",
+    date: "토요일, 2025년 11월 8일",
+    time: "오후 6시에 시작합니다",
+    address: "퀸 8홀 - 3층, 91B2 팜 반 하이, 푸옝 3, 탄빈, 호치민",
+    dateDetail: "2025년 11월 8일 토요일",
+    lunarDate: "(음력 2025년 9월 19일)",
+    invitation: [
+      "저희 가족과 함께 <b>결혼식</b>에 참석해 주세요",
+      "귀하의 참석은 저희 가족에게 큰 영광입니다!",
+      "이 특별한 날에 귀하를 모시게 되어 매우 기쁩니다.",
+    ],
+    eventType: "결혼식",
+    guest: "귀하",
+  },
+};
+
+export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
   return (
-    <Box
-      component="section"
-      id="wedding-day"
-      sx={{
-        py: { xs: 5, md: 8 },
-        background: "linear-gradient(135deg, #f9f9f9 60%, #f3e5f5 100%)",
-        minHeight: "100vh",
-      }}
-    >
-      <Container maxWidth="md">
-        <FadeInOnScroll direction="down">
-          <Typography
-            variant="h3"
-            align="center"
-            gutterBottom
-            className="wedding-title"
-            sx={{
-              fontFamily: '"UVN Moi Hong", cursive',
-              color: "#000",
-              fontStyle: "italic",
-              mb: 2,
-              fontSize: { xs: 32, md: 80 },
-              textShadow: "0 2px 12px #e1bee7",
-            }}
-          >
-            Wedding Day
-          </Typography>
+    <div id="SECTION353" className="ladi-section">
+      <div className="ladi-section-background"></div>
+      <div className="ladi-container">
+        <FadeInOnScroll delay={0.5} direction="down">
+          <div id="HEADLINE428" className="ladi-element">
+            <h3 className="ladi-headline">{LANGUAGE_TEXT[lang].headline}</h3>
+          </div>
         </FadeInOnScroll>
-        {/* <FadeInOnScroll direction="up" delay={300}>
-          <Typography
-            align="center"
-            color="text.secondary"
-            sx={{
-              mb: 4,
-              fontSize: { xs: 16, md: 18 },
-              fontStyle: "italic",
-              fontWeight: 400,
-            }}
-          >
-            Chúng tôi hân hoan chào đón sự hiện diện của bạn trong ngày trọng
-            đại này!
-          </Typography>
-        </FadeInOnScroll> */}
-        <FadeInOnScroll direction="up" delay={1000}>
-          <Card
-            elevation={6}
-            sx={{
-              mt: 10,
-              display: "grid",
-              gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-              background: "rgba(255,255,255,0.95)",
-              minHeight: 400,
-            }}
-          >
-            {/* Left: Image */}
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                position: "relative",
-                overflow: "hidden",
-                boxShadow: "rgb(0, 0, 0) -10px 15px 20px -15px", // Left shadow for left box
-              }}
-            >
-              <Box
-                component="img"
-                src="https://w.ladicdn.com/s900x1200/5c728619c417ab07e5194baa/z5764697493791_4691cbad22819b89413fe1451ebc1ac3-20240827165316-wyiof.jpg"
-                alt="Wedding Couple"
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  mx: "auto",
-                  zIndex: 2,
-                }}
-              />
-              {/* Save The Date overlay - full backdrop and centered text */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  zIndex: 3,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: "rgba(0,0,0,0.5)", // Full backdrop
-                  p: 0,
-                  textAlign: "center",
-                }}
-              >
-                <Paper
-                  elevation={0}
-                  sx={{
-                    px: { xs: 2, md: 5 },
-                    py: { xs: 1.5, md: 2.5 },
-                    textAlign: "center",
-                    background: "transparent",
-                    borderRadius: 3,
-                    opacity: 1,
-                    position: "relative",
-                    overflow: "visible",
-                    width: "100%",
-                    maxWidth: 320,
-                    mx: "auto",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      top: -18,
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      background: "#fff",
-                      borderRadius: "50%",
-                      width: 36,
-                      height: 36,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      boxShadow: "0 2px 8px #b388ff33",
-                      zIndex: 2,
-                    }}
-                  >
-                    <Icon
-                      icon="mdi:calendar-heart"
-                      color="#ab47bc"
-                      width={24}
-                      height={24}
+        <FadeInOnScroll
+          data-action="true"
+          id="GROUP469"
+          className="ladi-element"
+        >
+          <div className="ladi-group">
+            <div id="BOX405" className="ladi-element">
+              <div className="ladi-box ladi-transition"></div>
+            </div>
+            <div id="GROUP468" className="ladi-element">
+              <div className="ladi-group">
+                <div id="PARAGRAPH441" className="ladi-element">
+                  <div className="ladi-paragraph">
+                    {LANGUAGE_TEXT[lang].paragraph}
+                  </div>
+                </div>
+                <div id="FORM344" data-config-id="" className="ladi-element">
+                  <div className="ladi-form">
+                    <div id="FORM_ITEM366" className="ladi-element">
+                      <div className="ladi-form-item-container">
+                        <div className="ladi-form-item-background"></div>
+                        <div className="ladi-form-item">
+                          <span tabIndex={1} className="ladi-form-control">
+                            {LANGUAGE_TEXT[lang].guest}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="PARAGRAPH442" className="ladi-element">
+                  <div className="ladi-paragraph">
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: LANGUAGE_TEXT[lang].invitation[0],
+                      }}
                     />
-                  </Box>
-                  <Typography
-                    variant="subtitle1"
-                    sx={{
-                      fontWeight: 700,
-                      color: "#ffffff",
-                      letterSpacing: 1,
-                      mt: 2,
-                      mb: 0.5,
-                      fontFamily: '"UVN Moi Hong", cursive',
-                      fontSize: 32,
-                    }}
-                  >
-                    Save The Date
-                  </Typography>
-                  <Divider sx={{ my: 1.2, borderColor: "#b388ff44" }} />
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      letterSpacing: 6,
-                      fontWeight: 800,
-                      color: "#ffffff",
-                      fontFamily: '"UVN Moi Hong", cursive',
-                      textShadow: "0 2px 12px #ede7f6",
-                      mb: 0.5,
-                    }}
-                  >
-                    08 . 11 . 2025
-                  </Typography>
-                  <Button
-                    variant="outlined"
-                    color="secondary"
-                    startIcon={
-                      <Icon icon="mdi:calendar-plus" width={20} height={20} />
-                    }
-                    href="/wedding-invite.ics"
-                    download
-                    sx={{
-                      mt: 1,
-                      mb: 1,
-                      fontWeight: 600,
-                      borderRadius: 2,
-                      borderColor: "#b388ff",
-                      color: "#fff",
-                      background: "rgba(171,71,188,0.15)",
-                      "&:hover": {
-                        background: "#b388ff",
-                        color: "#fff",
-                        borderColor: "#ab47bc",
-                      },
-                      fontSize: 14,
-                      px: 2.5,
-                      py: 0.7,
-                    }}
-                  >
-                    Thêm vào lịch
-                  </Button>
-                </Paper>
-              </Box>
-              {/* Decorative overlay */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: 24,
-                  left: 24,
-                  width: 48,
-                  height: 48,
-                  borderRadius: "50%",
-                  background: "#fff8e1",
-                  opacity: 0.7,
-                  zIndex: 1,
-                  boxShadow: "0 2px 8px #e1bee7",
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="HEADLINE433" className="ladi-element">
+              <h3 className="ladi-headline">Văn Vương &amp; Ngọc Nhung</h3>
+            </div>
+            <div id="HEADLINE435" className="ladi-element">
+              <h3 className="ladi-headline ladi-transition">
+                {LANGUAGE_TEXT[lang].invitation[1]}
+              </h3>
+            </div>
+            <div data-action="true" id="GROUP462" className="ladi-element">
+              <div
+                className="ladi-group"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
-              />
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 24,
-                  right: 24,
-                  width: 32,
-                  height: 32,
-                  borderRadius: "50%",
-                  background: "#b388ff",
-                  opacity: 0.18,
-                  zIndex: 1,
-                }}
-              />
-            </Box>
-            {/* Right: Invite Card */}
-            <Box
-              sx={{
-                flex: 1,
-                p: 2,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                background: "transparent",
-                boxShadow: "rgb(0, 0, 0) 10px 15px 20px -15px",
-              }}
-            >
-              <Box
-                display="flex"
-                flexDirection="column"
-                justifyContent="center"
-                mb={2}
               >
-                <Typography
-                  variant="h6"
-                  align="center"
-                  gutterBottom
-                  sx={{
-                    fontWeight: 700,
-                    letterSpacing: 1,
-                  }}
+                <a
+                  href="https://maps.app.goo.gl/JJDLxawCidMtDGvm9"
+                  target="_blank"
+                  id="BUTTON396"
+                  className="ladi-element"
                 >
-                  TRÂN TRỌNG KÍNH MỜI
-                </Typography>
-
-                <Typography
-                  variant="h6"
-                  align="center"
-                  gutterBottom
-                  sx={{
-                    color: "rgb(168, 6, 6)",
-                    fontWeight: 700,
-                    letterSpacing: 1,
-                  }}
-                >
-                  Quý khách
-                </Typography>
-                <Typography align="center" variant="body2" sx={{ mt: 1 }}>
-                  Tới dự bữa Tiệc <strong>Báo Hỉ</strong> cùng gia đình chúng
-                  tôi
-                </Typography>
-
-                <Typography
-                  variant="h4"
-                  align="center"
-                  sx={{
-                    my: 4,
-                    fontFamily: '"UVN Moi Hong", cursive',
-                    letterSpacing: 1,
-                    textShadow: "0 2px 8px #f3e5f5",
-                    fontSize: { xs: 28, md: 36 },
-                  }}
-                >
-                  Văn Vương & Ngọc Nhung
-                </Typography>
-                <Box sx={{ textAlign: "center", mb: 2 }}>
-                  <Typography
-                    variant="subtitle1"
-                    sx={{
-                      fontWeight: 700,
-                      color: "#ab47bc",
-                      fontSize: 20,
-                      mb: 0.5,
-                    }}
-                  >
-                    Tại: Queen Plaza Tân Bình
-                  </Typography>
-                  {/* <Typography
-                variant="body2"
-                sx={{
-                  fontWeight: 700,
-                  color: "#7c43bd",
-                  letterSpacing: 1,
-                  mb: 1,
-                }}
-                >
-                TIỆC BÁO HỈ
-                </Typography> */}
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontWeight: 500,
-                      fontSize: 16,
-                    }}
-                  >
-                    <b>18:00</b> | Thứ 7, 08.11.2025
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontWeight: 500,
-                      fontSize: 15,
-                      color: "#888",
-                    }}
-                  >
-                    (19/09/Ất Tỵ)
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      mt: 1,
-                      fontWeight: 500,
-                      fontSize: 15.5,
-                    }}
-                  >
-                    Sảnh Queen 8 - Tầng 3<br />
-                    91B2 Phạm Văn Hai, P.3, Tân Bình, HCM
-                  </Typography>
-                </Box>
-              </Box>
-
-              <Box display="flex" flexDirection="column" alignItems="center">
-                <Typography
-                  align="center"
-                  color="text.secondary"
-                  sx={{
-                    mb: 3,
-                    fontSize: { xs: 15, md: 17 },
-                    fontStyle: "italic",
-                  }}
-                >
-                  Sự hiện diện của quý khách là niềm vinh dự cho gia đình chúng
-                  tôi!
-                </Typography>
-
-                <Box display="flex" justifyContent="center" mb={2}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    startIcon={
-                      <span
-                        style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          fontSize: 22,
-                        }}
-                      >
-                        <Icon icon="mdi:map-marker" width={22} height={22} />
-                      </span>
-                    }
-                    component={Link}
-                    href="https://maps.app.goo.gl/JJDLxawCidMtDGvm9"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    sx={{
-                      px: 4,
-                      py: 1.2,
-                      borderRadius: 2,
-                      fontWeight: 600,
-                      background:
-                        "linear-gradient(90deg, #e1bee7 60%, #b388ff 100%)",
-                      color: "#6a1b9a",
-                      boxShadow: "0 2px 8px #b388ff44",
-                      "&:hover": {
-                        background:
-                          "linear-gradient(90deg, #b388ff 60%, #ab47bc 100%)",
-                        color: "#fff",
-                      },
-                    }}
-                  >
-                    Chỉ đường
-                  </Button>
-                </Box>
-              </Box>
-            </Box>
-          </Card>
+                  <div className="ladi-button">
+                    <div className="ladi-button-background"></div>
+                    <div
+                      id="BUTTON_SHAPE396"
+                      className="ladi-element ladi-button-shape"
+                    >
+                      <div className="ladi-shape">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="none"
+                          viewBox="0 0 24 24"
+                          className=""
+                          fill="rgba(255, 255, 255, 1)"
+                        >
+                          <use xlinkHref="#shape_gFxNLGjWpI"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      id="BUTTON_TEXT396"
+                      className="ladi-element ladi-button-headline"
+                    >
+                      <p className="ladi-headline">
+                        {LANGUAGE_TEXT[lang].button}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div id="GROUP464" className="ladi-element">
+              <div className="ladi-group">
+                <div id="IMAGE408" className="ladi-element">
+                  <div className="ladi-image">
+                    <div className="ladi-image-background"></div>
+                    <div className="ladi-overlay"></div>
+                  </div>
+                </div>
+                <div id="GROUP467" className="ladi-element">
+                  <div className="ladi-group">
+                    <div id="HEADLINE436" className="ladi-element">
+                      <h3 className="ladi-headline">
+                        Save
+                        <br />
+                      </h3>
+                    </div>
+                    <div id="HEADLINE437" className="ladi-element">
+                      <h3 className="ladi-headline">
+                        The Date
+                        <br />
+                      </h3>
+                    </div>
+                    <div id="LINE353" className="ladi-element">
+                      <div className="ladi-line">
+                        <div className="ladi-line-container"></div>
+                      </div>
+                    </div>
+                    <div id="PARAGRAPH450" className="ladi-element">
+                      <div className="ladi-paragraph">08 . 11 . 2025</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="GROUP465" className="ladi-element">
+              <div className="ladi-group">
+                <div id="HEADLINE434" className="ladi-element">
+                  <h3 className="ladi-headline ladi-transition">
+                    {LANGUAGE_TEXT[lang].venue}
+                    <br />
+                  </h3>
+                </div>
+                <div id="PARAGRAPH451" className="ladi-element">
+                  <div className="ladi-paragraph">
+                    {LANGUAGE_TEXT[lang].eventType}
+                  </div>
+                </div>
+                <div id="PARAGRAPH452" className="ladi-element">
+                  <div className="ladi-paragraph">
+                    {LANGUAGE_TEXT[lang].time}
+                  </div>
+                </div>
+                <div id="PARAGRAPH453" className="ladi-element">
+                  <div className="ladi-paragraph">
+                    {LANGUAGE_TEXT[lang].date}
+                  </div>
+                </div>
+                <div id="PARAGRAPH454" className="ladi-element">
+                  <div className="ladi-paragraph">
+                    {LANGUAGE_TEXT[lang].lunarDate}
+                  </div>
+                </div>
+                <div id="PARAGRAPH455" className="ladi-element">
+                  <div className="ladi-paragraph">
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: LANGUAGE_TEXT[lang].address,
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </FadeInOnScroll>
-      </Container>
-
-      <CountdownSection />
-    </Box>
+      </div>
+    </div>
   );
 };

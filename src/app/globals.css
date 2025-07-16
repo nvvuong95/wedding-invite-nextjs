@@ -50,6 +50,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.before-animate {
+  opacity: 0;
+  transition: none !important;
+}
+
 .fadein-up {
   opacity: 0;
   animation: fadeInUp 1s ease-out forwards;
@@ -112,4 +117,58 @@ body {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.fadein-bounce {
+  opacity: 0;
+  animation: bounce 1s ease-out forwards;
+}
+
+@keyframes bounce {
+    0%, 100%, 20%, 50%, 80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+.fadein-bounceIn {
+  opacity: 0;
+  animation: bounceIn 1s ease-out forwards;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0.3);
+        -ms-transform: scale(0.3);
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+    70% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
 }
