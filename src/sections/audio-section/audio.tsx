@@ -2,7 +2,26 @@ import { useEffect, useRef, useState } from "react";
 import { Box, IconButton } from "@mui/material";
 import { Icon } from "@iconify/react";
 
-export const AudioSection = () => {
+type AudioSectionProps = {
+  lang?: "vi" | "ko";
+};
+
+const LANGUAGE_TEXT = {
+  vi: {
+    loading: "Đang tải thiệp mời...",
+    music: "Nhạc nền",
+    play: "Nhấn để phát nhạc",
+    playing: "Đang phát",
+  },
+  ko: {
+    loading: "초대장을 불러오는 중...",
+    music: "음악",
+    play: "음악 재생",
+    playing: "재생 중",
+  },
+};
+
+export const AudioSection = ({ lang = "vi" }: AudioSectionProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const [showFull, setShowFull] = useState(false);
@@ -91,12 +110,21 @@ export const AudioSection = () => {
         {showFull && (
           <>
             <Box sx={{ flex: 1, minWidth: 0 }}>
-              <Box sx={{ fontWeight: 600, fontSize: 16, color: "#3b3b5c" }}>
-                Nhạc nền
+              <Box
+                sx={{
+                  fontWeight: 600,
+                  fontSize: 16,
+                  color: "#3b3b5c",
+                  paddingBottom: 1,
+                }}
+              >
+                {LANGUAGE_TEXT[lang].music}
               </Box>
               <Box sx={{ fontSize: 13, color: "#6b7280" }}>
                 <span style={{ fontStyle: "italic" }}>
-                  {isPlaying ? "Đang phát" : "Nhấn để phát nhạc"}
+                  {isPlaying
+                    ? LANGUAGE_TEXT[lang].playing
+                    : LANGUAGE_TEXT[lang].play}
                 </span>
               </Box>
             </Box>

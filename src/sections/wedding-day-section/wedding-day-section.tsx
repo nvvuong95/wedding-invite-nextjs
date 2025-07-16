@@ -1,5 +1,7 @@
 "use client";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import { Typography } from "@mui/material";
+import { th } from "framer-motion/client";
 import React from "react";
 
 type WeddingDaySectionProps = {
@@ -25,6 +27,7 @@ const LANGUAGE_TEXT = {
     ],
     eventType: "TIỆC BÁO HỈ",
     guest: "Quý khách",
+    couple: "Văn Vương & Ngọc Nhung",
   },
   ko: {
     headline: "결혼식 날",
@@ -43,6 +46,7 @@ const LANGUAGE_TEXT = {
     ],
     eventType: "결혼식",
     guest: "귀하",
+    couple: "Van Vuong & Ngoc Nhung",
   },
 };
 
@@ -98,7 +102,18 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
               </div>
             </div>
             <div id="HEADLINE433" className="ladi-element">
-              <h3 className="ladi-headline">Văn Vương &amp; Ngọc Nhung</h3>
+              <Typography
+                className="ladi-headline"
+                sx={(theme) => ({
+                  fontFamily: "var(--ladi-font-family-1)",
+                  fontSize: "1.5rem",
+                  color: "var(--ladi-color-1)",
+                  [theme.breakpoints.up("md")]: { fontSize: "2.5rem" },
+                  textAlign: "center",
+                })}
+              >
+                {LANGUAGE_TEXT[lang].couple}
+              </Typography>
             </div>
             <div id="HEADLINE435" className="ladi-element">
               <h3 className="ladi-headline ladi-transition">

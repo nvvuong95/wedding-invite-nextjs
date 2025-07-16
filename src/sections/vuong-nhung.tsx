@@ -16,43 +16,39 @@ import { FinalSection } from "./final-section/final-section";
 // Types for component props
 interface WeddingInvitationProps {
   className?: string;
+  lang?: "vi" | "ko";
 }
 
-interface CountdownState {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
-
-const VuongNhungWeddingInvitation: React.FC<WeddingInvitationProps> = () => {
+const VuongNhungWeddingInvitation = ({
+  lang = "vi",
+}: WeddingInvitationProps) => {
   return (
     <div className="ladi-wraper">
-      <AudioSection />
+      <AudioSection lang={lang} />
 
       {/* Floating Navigation */}
       <FloatingNav />
 
       {/* Hero Section */}
-      <HeroSection />
+      <HeroSection lang={lang} />
 
       {/* Wedding Day Section */}
-      <WeddingDaySection />
+      <WeddingDaySection lang={lang} />
 
       {/* Countdown Section */}
-      <CountdownSection />
+      <CountdownSection lang={lang} />
 
       {/* Couple Introduction Section */}
-      <CoupleIntroSection />
+      <CoupleIntroSection lang={lang} />
 
       {/* Wedding Moments Section */}
-      <WeddingMomentSection />
+      <WeddingMomentSection lang={lang} />
 
       {/* Love Story Section */}
-      <LoveStorySection />
+      <LoveStorySection lang={lang} />
 
       {/* Final Section */}
-      <FinalSection />
+      <FinalSection lang={lang} />
 
       {/* Snowflakes Animation */}
       <Snowflakes />

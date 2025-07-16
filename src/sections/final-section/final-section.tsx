@@ -1,6 +1,19 @@
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 
-export const FinalSection = () => {
+type IFinalSectionProps = {
+  lang?: "vi" | "ko";
+};
+
+const LANGUAGE_TEXT = {
+  vi: {
+    title: "Văn Vương & Ngọc Nhung",
+  },
+  ko: {
+    title: "Van Vuong & Ngoc Nhung",
+  },
+};
+
+export const FinalSection = ({ lang = "vi" }: IFinalSectionProps) => {
   return (
     <div id="SECTION361" className="ladi-section">
       <div className="ladi-section-background"></div>
@@ -19,7 +32,7 @@ export const FinalSection = () => {
             </div>
             <div id="HEADLINE477" className="ladi-element">
               <h3 className="ladi-headline">
-                Văn Vương&nbsp; &amp; Ngọc Nhung
+                {LANGUAGE_TEXT[lang].title}
                 <br />
               </h3>
             </div>
