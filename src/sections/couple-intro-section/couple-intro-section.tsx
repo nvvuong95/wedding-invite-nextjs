@@ -73,13 +73,13 @@ export const CoupleIntroSection = ({
           className="ladi-element"
         >
           <div className="ladi-group">
-            <div id="HEADLINE470" className="ladi-element">
+            {/* <div id="HEADLINE470" className="ladi-element">
               <h3 className="ladi-headline">
                 {LANGUAGE_TEXT[lang].groomFamily}
                 <br />
               </h3>
-            </div>
-            <div id="PARAGRAPH567" className="ladi-element">
+            </div> */}
+            {/* <div id="PARAGRAPH567" className="ladi-element">
               <div className="ladi-paragraph">
                 <span
                   style={{ fontStyle: "normal" }}
@@ -88,13 +88,13 @@ export const CoupleIntroSection = ({
                   }}
                 ></span>
               </div>
-            </div>
+            </div> */}
             <div id="IMAGE424" className="ladi-element">
               <div className="ladi-image">
                 <div className="ladi-image-background"></div>
               </div>
             </div>
-            <div id="HEADLINE471" className="ladi-element">
+            {/* <div id="HEADLINE471" className="ladi-element">
               <h3 className="ladi-headline">
                 {LANGUAGE_TEXT[lang].brideFamily}
                 <br />
@@ -109,7 +109,7 @@ export const CoupleIntroSection = ({
                   }}
                 ></span>
               </div>
-            </div>
+            </div> */}
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
