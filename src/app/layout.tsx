@@ -51,27 +51,6 @@ export default function RootLayout({
         <meta property="og:title" content="Vương Nhung" />
         <meta property="og:type" content="website" />
         <meta name="format-detection" content="telephone=no" />
-        <link
-          rel="icon"
-          type="image/x-icon"
-          href="https://static.ladipage.net/5c728619c417ab07e5194baa/me-trong-20240528050505-wpi8z.png"
-        />
-        <link
-          rel="shortcut icon"
-          href="https://static.ladipage.net/5c728619c417ab07e5194baa/me-trong-20240528050505-wpi8z.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          href="https://static.ladipage.net/5c728619c417ab07e5194baa/me-trong-20240528050505-wpi8z.png"
-        />
-        <link
-          rel="apple-touch-icon-precomposed"
-          href="https://static.ladipage.net/5c728619c417ab07e5194baa/me-trong-20240528050505-wpi8z.png"
-        />
-        <meta
-          name="msapplication-TileImage"
-          content="https://static.ladipage.net/5c728619c417ab07e5194baa/me-trong-20240528050505-wpi8z.png"
-        />
         <meta name="revisit-after" content="days" />
         <link rel="dns-prefetch" />
         <link
@@ -82,31 +61,6 @@ export default function RootLayout({
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com/"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preconnect"
-          href="https://w.ladicdn.com/"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preconnect"
-          href="https://s.ladicdn.com/"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preconnect"
-          href="https://api1.ldpform.com/"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preconnect"
-          href="https://a.ladipage.com/"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preconnect"
-          href="https://api.sales.ldpform.net/"
           crossOrigin="anonymous"
         />
         <link
