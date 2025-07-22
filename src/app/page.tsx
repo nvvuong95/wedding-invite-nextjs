@@ -1,8 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import VuongNhungWeddingInvitation from "@/sections/vuong-nhung";
 
 export default function Home() {
+  const [code, setCode] = useState("");
+  const [authorized, setAuthorized] = useState(false);
+
   if (typeof window === "undefined") {
     return (
       <div
@@ -63,7 +67,97 @@ export default function Home() {
         `}</style>
       </div>
     );
-  } else {
-    return <VuongNhungWeddingInvitation />;
   }
+
+  if (!authorized) {
+    return (
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "linear-gradient(135deg, #fffbe6 0%, #ffe4e1 100%)",
+        }}
+      >
+        <div
+          style={{
+            fontFamily: "UTM Yen Tu, Prata, serif",
+            fontSize: "2.2rem",
+            color: "#8b4513",
+            marginBottom: 28,
+            letterSpacing: "2px",
+            fontWeight: 500,
+            textAlign: "center",
+            textShadow: "0 2px 8px #ffe4e1",
+          }}
+        >
+          Đây là trang nội bộ
+          <br />
+          Vui lòng nhập mã để vào
+        </div>
+        <div
+          style={{
+            background: "rgba(255,255,255,0.85)",
+            borderRadius: 16,
+            boxShadow: "0 4px 24px rgba(139,69,19,0.08)",
+            padding: "32px 28px 24px 28px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            minWidth: 320,
+          }}
+        >
+          <input
+            type="password"
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+            placeholder="Nhập mã truy cập"
+            style={{
+              padding: "12px 18px",
+              fontSize: "1.15rem",
+              borderRadius: 10,
+              border: "1.5px solid #8b4513",
+              marginBottom: 18,
+              outline: "none",
+              width: 220,
+              textAlign: "center",
+              background: "#fffbe6",
+              boxShadow: "0 2px 8px #ffe4e1",
+              transition: "border 0.2s",
+            }}
+            onFocus={(e) => (e.target.style.border = "2px solid #ffd700")}
+            onBlur={(e) => (e.target.style.border = "1.5px solid #8b4513")}
+          />
+          <button
+            onClick={() => {
+              if (code.trim().toLowerCase() === "vuongnhung") {
+                setAuthorized(true);
+              } else {
+                alert("Mã không đúng. Vui lòng thử lại.");
+              }
+            }}
+            style={{
+              padding: "12px 32px",
+              fontSize: "1.05rem",
+              borderRadius: 10,
+              border: "none",
+              background: "linear-gradient(90deg, #8b4513 60%, #ffd700 100%)",
+              color: "#fff",
+              cursor: "pointer",
+              fontWeight: 600,
+              boxShadow: "0 2px 8px #ffe4e1",
+              letterSpacing: "1px",
+              transition: "background 0.2s",
+            }}
+          >
+            Vào trang
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return <VuongNhungWeddingInvitation />;
 }
