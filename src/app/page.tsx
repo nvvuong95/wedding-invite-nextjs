@@ -14,6 +14,19 @@ export default function Home() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("code")?.toLowerCase() === "vuongnhung") {
+        setAuthorized(true);
+        sessionStorage.setItem(AUTH_KEY, "true");
+        if (sessionStorage.getItem(VIDEO_KEY) !== "true") {
+          setShowVideo(true);
+        }
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
       // Kiểm tra trạng thái xác thực
       const isAuth = sessionStorage.getItem(AUTH_KEY) === "true";
       setAuthorized(isAuth);
