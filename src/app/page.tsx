@@ -15,11 +15,11 @@ export default function Home() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       // Kiểm tra trạng thái xác thực
-      const isAuth = localStorage.getItem(AUTH_KEY) === "true";
+      const isAuth = sessionStorage.getItem(AUTH_KEY) === "true";
       setAuthorized(isAuth);
 
       // Kiểm tra trạng thái video đã xem chưa
-      const videoShown = localStorage.getItem(VIDEO_KEY) === "true";
+      const videoShown = sessionStorage.getItem(VIDEO_KEY) === "true";
       setShowVideo(isAuth && !videoShown);
 
       setIsReady(true);
@@ -30,9 +30,9 @@ export default function Home() {
   const handleAuth = () => {
     if (code.trim().toLowerCase() === "vuongnhung") {
       setAuthorized(true);
-      localStorage.setItem(AUTH_KEY, "true");
+      sessionStorage.setItem(AUTH_KEY, "true");
       // Nếu chưa xem video thì show video
-      if (localStorage.getItem(VIDEO_KEY) !== "true") {
+      if (sessionStorage.getItem(VIDEO_KEY) !== "true") {
         setShowVideo(true);
       }
     } else {
@@ -43,7 +43,7 @@ export default function Home() {
   // Khi video kết thúc
   const handleVideoEnd = () => {
     setShowVideo(false);
-    localStorage.setItem(VIDEO_KEY, "true");
+    sessionStorage.setItem(VIDEO_KEY, "true");
   };
 
   if (typeof window === "undefined" || !isReady) {
