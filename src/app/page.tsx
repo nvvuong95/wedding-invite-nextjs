@@ -232,13 +232,31 @@ export default function Home() {
           width: "100vw",
           height: "100vh",
           zIndex: 4000,
-          background: "#000",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           opacity: showVideo ? 1 : 0,
           transition: "opacity 1s",
           pointerEvents: showVideo ? "auto" : "none",
+          backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/window-room-with-surreal-mystical-view.jpg")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundBlendMode: "darken",
+          backgroundColor: "rgba(0, 0, 0, 0.85)",
+          animation: showVideo
+            ? "fadeInInvitation 1.2s"
+            : "fadeOutInvitation 1.2s",
+          animationFillMode: "forwards",
+          animationDelay: "0.5s",
+          animationTimingFunction: "ease-in-out",
+          animationDirection: "normal",
+          animationIterationCount: 1,
+          animationPlayState: "running",
+          filter: "brightness(1.1)",
+          backdropFilter: "blur(5px)",
+          boxShadow: "0 4px 24px rgba(0, 0, 0, 0.2)",
+          overflow: "hidden",
+          WebkitOverflowScrolling: "touch",
         }}
       >
         <video
