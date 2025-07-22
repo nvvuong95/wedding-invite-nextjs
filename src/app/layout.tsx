@@ -48,17 +48,8 @@ export default function RootLayout({
             `,
           }}
         />
-        <link rel="canonical" href="giao-dien-romany-vip.html" />
-        <meta
-          property="og:url"
-          content="https://www.mewedding.online/giao-dien-romany-vip"
-        />
         <meta property="og:title" content="Vương Nhung" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://static.ladipage.net/5c728619c417ab07e5194baa/z5852503381355_f429ee1d082b65f157e1c028202455db-20240921043754-55e99.jpg"
-        />
         <meta name="format-detection" content="telephone=no" />
         <link
           rel="icon"
