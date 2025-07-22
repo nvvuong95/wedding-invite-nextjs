@@ -17,7 +17,16 @@ type HeroSectionProps = {
 
 export const HeroSection = ({ lang = "vi" }: HeroSectionProps) => {
   return (
-    <div id="SECTION1" className="ladi-section">
+    <div
+      id="SECTION1"
+      className="ladi-section"
+      style={{
+        backgroundImage:
+          "url(https://ik.imagekit.io/n7dpnbw3v/wedding/my_love.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="ladi-section-background"></div>
       <div className="ladi-overlay"></div>
       <div className="ladi-container">

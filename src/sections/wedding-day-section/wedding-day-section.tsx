@@ -172,7 +172,13 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
               <div className="ladi-group">
                 <div id="IMAGE408" className="ladi-element">
                   <div className="ladi-image">
-                    <div className="ladi-image-background"></div>
+                    <div
+                      className="ladi-image-background"
+                      style={{
+                        backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+                        backgroundSize: "cover",
+                      }}
+                    ></div>
                     <div className="ladi-overlay"></div>
                   </div>
                 </div>

@@ -41,7 +41,12 @@ export const CoupleIntroSection = ({
 }: CoupleIntroSectionProps) => {
   return (
     <div id="SECTION358" className="ladi-section">
-      <div className="ladi-section-background"></div>
+      <div
+        className="ladi-section-background"
+        style={{
+          backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/my_love.jpg")`,
+        }}
+      ></div>
       <div className="ladi-overlay"></div>
       <div className="ladi-container">
         <FadeInOnScroll
@@ -51,7 +56,12 @@ export const CoupleIntroSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div className="ladi-image-background"></div>
+            <div
+              className="ladi-image-background"
+              style={{
+                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/the_wedding.png")`,
+              }}
+            ></div>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -91,7 +101,12 @@ export const CoupleIntroSection = ({
             </div> */}
             <div id="IMAGE424" className="ladi-element">
               <div className="ladi-image">
-                <div className="ladi-image-background"></div>
+                <div
+                  className="ladi-image-background"
+                  style={{
+                    backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/husband.png")`,
+                  }}
+                ></div>
               </div>
             </div>
             {/* <div id="HEADLINE471" className="ladi-element">
@@ -126,7 +141,12 @@ export const CoupleIntroSection = ({
                 </div>
                 <div data-action="true" id="IMAGE422" className="ladi-element">
                   <div className="ladi-image">
-                    <div className="ladi-image-background"></div>
+                    <div
+                      className="ladi-image-background"
+                      style={{
+                        backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+                      }}
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -159,7 +179,12 @@ export const CoupleIntroSection = ({
                 </div>
                 <div data-action="true" id="IMAGE423" className="ladi-element">
                   <div className="ladi-image">
-                    <div className="ladi-image-background"></div>
+                    <div
+                      className="ladi-image-background"
+                      style={{
+                        backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+                      }}
+                    ></div>
                   </div>
                 </div>
               </div>

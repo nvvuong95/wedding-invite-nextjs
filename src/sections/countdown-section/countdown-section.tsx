@@ -97,7 +97,12 @@ export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div className="ladi-image-background"></div>
+            <div
+              className="ladi-image-background"
+              style={{
+                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/countdown_bg.png")`,
+              }}
+            ></div>
           </div>
         </FadeInOnScroll>
         <div id="BOX416" className="ladi-element">
@@ -154,7 +159,13 @@ export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div className="ladi-image-background"></div>
+            <div
+              className="ladi-image-background"
+              style={{
+                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+                backgroundSize: "cover",
+              }}
+            ></div>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -185,7 +196,13 @@ export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div className="ladi-image-background"></div>
+            <div
+              className="ladi-image-background"
+              style={{
+                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+                backgroundSize: "cover",
+              }}
+            ></div>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -195,7 +212,13 @@ export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div className="ladi-image-background"></div>
+            <div
+              className="ladi-image-background"
+              style={{
+                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+                backgroundSize: "cover",
+              }}
+            ></div>
           </div>
         </FadeInOnScroll>
       </div>

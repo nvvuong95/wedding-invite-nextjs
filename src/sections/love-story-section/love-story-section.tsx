@@ -34,7 +34,12 @@ type LoveStorySectionProps = {
 export const LoveStorySection = ({ lang = "vi" }: LoveStorySectionProps) => {
   return (
     <div id="SECTION360" className="ladi-section">
-      <div className="ladi-section-background"></div>
+      <div
+        className="ladi-section-background"
+        style={{
+          backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/my_love.jpg")`,
+        }}
+      ></div>
       <div className="ladi-overlay"></div>
       <div className="ladi-container">
         <FadeInOnScroll
@@ -54,7 +59,12 @@ export const LoveStorySection = ({ lang = "vi" }: LoveStorySectionProps) => {
           <div className="ladi-group">
             <div id="IMAGE435" className="ladi-element">
               <div className="ladi-image">
-                <div className="ladi-image-background"></div>
+                <div
+                  className="ladi-image-background"
+                  style={{
+                    backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/the_first_day.png")`,
+                  }}
+                ></div>
               </div>
             </div>
             <div id="PARAGRAPH571" className="ladi-element">
@@ -78,7 +88,12 @@ export const LoveStorySection = ({ lang = "vi" }: LoveStorySectionProps) => {
           <div className="ladi-group">
             <div id="IMAGE436" className="ladi-element">
               <div className="ladi-image">
-                <div className="ladi-image-background"></div>
+                <div
+                  className="ladi-image-background"
+                  style={{
+                    backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/the_love_day.png")`,
+                  }}
+                ></div>
               </div>
             </div>
             <div id="PARAGRAPH573" className="ladi-element">
@@ -102,7 +117,12 @@ export const LoveStorySection = ({ lang = "vi" }: LoveStorySectionProps) => {
           <div className="ladi-group">
             <div id="IMAGE437" className="ladi-element">
               <div className="ladi-image">
-                <div className="ladi-image-background"></div>
+                <div
+                  className="ladi-image-background"
+                  style={{
+                    backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/the_wedding_day.png")`,
+                  }}
+                ></div>
               </div>
             </div>
             <div id="PARAGRAPH575" className="ladi-element">

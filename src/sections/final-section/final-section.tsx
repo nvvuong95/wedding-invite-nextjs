@@ -27,7 +27,12 @@ export const FinalSection = ({ lang = "vi" }: IFinalSectionProps) => {
           <div className="ladi-group">
             <div id="IMAGE439" className="ladi-element">
               <div className="ladi-image">
-                <div className="ladi-image-background"></div>
+                <div
+                  className="ladi-image-background"
+                  style={{
+                    backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/the_wedding_bg.png")`,
+                  }}
+                ></div>
               </div>
             </div>
             <div id="HEADLINE477" className="ladi-element">
@@ -40,7 +45,12 @@ export const FinalSection = ({ lang = "vi" }: IFinalSectionProps) => {
         </FadeInOnScroll>
         <FadeInOnScroll delay={1} id="IMAGE440" className="ladi-element">
           <div className="ladi-image">
-            <div className="ladi-image-background"></div>
+            <div
+              className="ladi-image-background"
+              style={{
+                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+              }}
+            ></div>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -50,7 +60,12 @@ export const FinalSection = ({ lang = "vi" }: IFinalSectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div className="ladi-image-background"></div>
+            <div
+              className="ladi-image-background"
+              style={{
+                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/thank_you.png")`,
+              }}
+            ></div>
           </div>
         </FadeInOnScroll>
       </div>
