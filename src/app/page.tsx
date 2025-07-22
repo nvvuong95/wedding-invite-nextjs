@@ -89,14 +89,10 @@ export default function Home() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundImage: `
-        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-        url("https://ik.imagekit.io/n7dpnbw3v/wedding/wedding_intro_bg.jpg")
-          `,
+          backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/window-room-with-surreal-mystical-view.jpg")`,
           backgroundSize: "contain",
           backgroundBlendMode: "darken",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
+          backgroundPosition: "center",
         }}
       >
         <div
