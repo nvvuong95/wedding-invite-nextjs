@@ -2400,14 +2400,6 @@
 		height: 973.3px;
 	}
 
-	#IMAGE407 {
-		width: 194.692px;
-		height: 248px;
-		top: 214px;
-		left: -194.692px;
-		display: none !important;
-	}
-
 	#IMAGE407>.ladi-image>.ladi-image-background {
 		width: 194.692px;
 		height: 292.037px;
@@ -3947,13 +3939,6 @@
 @media (max-width: 767px) {
 	#SECTION1 {
 		height: 535px;
-	}
-
-	#IMAGE407 {
-		width: 420px;
-		height: 535px;
-		top: 0px;
-		left: 0px;
 	}
 
 	#IMAGE407>.ladi-image>.ladi-image-background {
