@@ -1,22 +1,50 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import VuongNhungWeddingInvitation from "@/sections/vuong-nhung";
-import { useEffect } from "react";
+
+const AUTH_KEY = "wedding_invite_authorized";
+const VIDEO_KEY = "wedding_invite_video_shown";
 
 export default function Home() {
   const [code, setCode] = useState("");
   const [authorized, setAuthorized] = useState(false);
   const [isReady, setIsReady] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get("invite_code")?.toLowerCase() === "vuongnhung") {
-        setAuthorized(true);
-      }
+      // Kiểm tra trạng thái xác thực
+      const isAuth = localStorage.getItem(AUTH_KEY) === "true";
+      setAuthorized(isAuth);
+
+      // Kiểm tra trạng thái video đã xem chưa
+      const videoShown = localStorage.getItem(VIDEO_KEY) === "true";
+      setShowVideo(isAuth && !videoShown);
+
       setIsReady(true);
     }
   }, []);
+
+  // Xác thực bằng mã
+  const handleAuth = () => {
+    if (code.trim().toLowerCase() === "vuongnhung") {
+      setAuthorized(true);
+      localStorage.setItem(AUTH_KEY, "true");
+      // Nếu chưa xem video thì show video
+      if (localStorage.getItem(VIDEO_KEY) !== "true") {
+        setShowVideo(true);
+      }
+    } else {
+      alert("Mã không đúng. Vui lòng thử lại.");
+    }
+  };
+
+  // Khi video kết thúc
+  const handleVideoEnd = () => {
+    setShowVideo(false);
+    localStorage.setItem(VIDEO_KEY, "true");
+  };
 
   if (typeof window === "undefined" || !isReady) {
     return (
@@ -170,13 +198,7 @@ export default function Home() {
                 onBlur={(e) => (e.target.style.border = "1.5px solid #8b4513")}
               />
               <button
-                onClick={() => {
-                  if (code.trim().toLowerCase() === "vuongnhung") {
-                    setAuthorized(true);
-                  } else {
-                    alert("Mã không đúng. Vui lòng thử lại.");
-                  }
-                }}
+                onClick={handleAuth}
                 style={{
                   padding: "12px 32px",
                   fontSize: "1.05rem",
@@ -201,5 +223,53 @@ export default function Home() {
     );
   }
 
-  return <VuongNhungWeddingInvitation />;
+  if (authorized && showVideo) {
+    return (
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: 4000,
+          background: "#000",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          opacity: showVideo ? 1 : 0,
+          transition: "opacity 1s",
+          pointerEvents: showVideo ? "auto" : "none",
+        }}
+      >
+        <video
+          src="https://ik.imagekit.io/n7dpnbw3v/wedding/att.GwC_zhWEbrY36Qvrga40cXwG74KPWhnjKb4og5Kne3c.mp4?updatedAt=1753169671954"
+          autoPlay
+          playsInline
+          muted
+          style={{
+            width: "100vw",
+            height: "100vh",
+            objectFit: "none",
+          }}
+          onEnded={handleVideoEnd}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      style={{
+        animation: "fadeInInvitation 1.2s",
+      }}
+    >
+      <VuongNhungWeddingInvitation />
+      <style>{`
+        @keyframes fadeInInvitation {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      `}</style>
+    </div>
+  );
 }
