@@ -4,13 +4,11 @@ import { useState, useEffect } from "react";
 import VuongNhungWeddingInvitation from "@/sections/vuong-nhung";
 
 const AUTH_KEY = "wedding_invite_authorized";
-const VIDEO_KEY = "wedding_invite_video_shown";
 
 export default function Home() {
   const [code, setCode] = useState("");
   const [authorized, setAuthorized] = useState(false);
   const [isReady, setIsReady] = useState(false);
-  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -18,9 +16,6 @@ export default function Home() {
       if (params.get("code")?.toLowerCase() === "vuongnhung") {
         setAuthorized(true);
         sessionStorage.setItem(AUTH_KEY, "true");
-        if (sessionStorage.getItem(VIDEO_KEY) !== "true") {
-          setShowVideo(true);
-        }
       }
     }
   }, []);
@@ -30,11 +25,6 @@ export default function Home() {
       // Kiểm tra trạng thái xác thực
       const isAuth = sessionStorage.getItem(AUTH_KEY) === "true";
       setAuthorized(isAuth);
-
-      // Kiểm tra trạng thái video đã xem chưa
-      const videoShown = sessionStorage.getItem(VIDEO_KEY) === "true";
-      setShowVideo(isAuth && !videoShown);
-
       setIsReady(true);
     }
   }, []);
@@ -44,19 +34,9 @@ export default function Home() {
     if (code.trim().toLowerCase() === "vuongnhung") {
       setAuthorized(true);
       sessionStorage.setItem(AUTH_KEY, "true");
-      // Nếu chưa xem video thì show video
-      if (sessionStorage.getItem(VIDEO_KEY) !== "true") {
-        setShowVideo(true);
-      }
     } else {
       alert("Mã không đúng. Vui lòng thử lại.");
     }
-  };
-
-  // Khi video kết thúc
-  const handleVideoEnd = () => {
-    setShowVideo(false);
-    sessionStorage.setItem(VIDEO_KEY, "true");
   };
 
   if (typeof window === "undefined" || !isReady) {
@@ -232,58 +212,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-    );
-  }
-
-  if (authorized && showVideo) {
-    return (
-      <div
-        style={{
-          position: "fixed",
-          inset: 0,
-          width: "100vw",
-          height: "100vh",
-          zIndex: 4000,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          opacity: showVideo ? 1 : 0,
-          transition: "opacity 1s",
-          pointerEvents: showVideo ? "auto" : "none",
-          backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/window-room-with-surreal-mystical-view.jpg")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundBlendMode: "darken",
-          backgroundColor: "rgba(0, 0, 0, 0.85)",
-          animation: showVideo
-            ? "fadeInInvitation 1.2s"
-            : "fadeOutInvitation 1.2s",
-          animationFillMode: "forwards",
-          animationDelay: "0.5s",
-          animationTimingFunction: "ease-in-out",
-          animationDirection: "normal",
-          animationIterationCount: 1,
-          animationPlayState: "running",
-          filter: "brightness(1.1)",
-          backdropFilter: "blur(5px)",
-          boxShadow: "0 4px 24px rgba(0, 0, 0, 0.2)",
-          overflow: "hidden",
-          WebkitOverflowScrolling: "touch",
-        }}
-      >
-        <video
-          src="https://ik.imagekit.io/n7dpnbw3v/wedding/att.GwC_zhWEbrY36Qvrga40cXwG74KPWhnjKb4og5Kne3c.mp4?updatedAt=1753169671954"
-          autoPlay
-          playsInline
-          muted
-          style={{
-            width: "100vw",
-            height: "100vh",
-            objectFit: "none",
-          }}
-          onEnded={handleVideoEnd}
-        />
       </div>
     );
   }
