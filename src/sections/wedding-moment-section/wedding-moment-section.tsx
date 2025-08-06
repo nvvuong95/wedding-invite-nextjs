@@ -1,4 +1,5 @@
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import { Box } from "@mui/material";
 
 const LANGUAGE_TEXT = {
   ko: {
@@ -14,6 +15,19 @@ const LANGUAGE_TEXT = {
 type WeddingMomentSectionProps = {
   lang?: "vi" | "ko";
 };
+
+const LIST_IMAGE = [
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9849.JPG?updatedAt=1754443059112",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9970.JPG?updatedAt=1754442929505",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9863.JPG?updatedAt=1754442930408",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A0102.JPG?updatedAt=1754442934434",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A0160.JPG?updatedAt=1754442938386",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A0210.JPG?updatedAt=1754442940281",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A8557.JPG?updatedAt=1754442961544",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A8663.JPG?updatedAt=1754442970666",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A8909.JPG?updatedAt=1754442980811",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9178.JPG?updatedAt=1754443004617",
+];
 
 export const WeddingMomentSection = ({
   lang = "vi",
@@ -37,12 +51,7 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
-              }}
-            ></div>
+            <Box component="img" src={LIST_IMAGE[0]}></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -52,12 +61,7 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
-              }}
-            ></div>
+            <Box component="img" src={LIST_IMAGE[1]}></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -67,12 +71,7 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
-              }}
-            ></div>
+            <Box component="img" src={LIST_IMAGE[2]}></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -82,12 +81,7 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
-              }}
-            ></div>
+            <Box component="img" src={LIST_IMAGE[3]}></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -97,12 +91,7 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
-              }}
-            ></div>
+            <Box component="img" src={LIST_IMAGE[4]}></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -112,12 +101,7 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
-              }}
-            ></div>
+            <Box component="img" src={LIST_IMAGE[5]}></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -127,12 +111,7 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
-              }}
-            ></div>
+            <Box component="img" src={LIST_IMAGE[6]}></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -142,12 +121,7 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
-              }}
-            ></div>
+            <Box component="img" src={LIST_IMAGE[7]}></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -157,12 +131,7 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
-              }}
-            ></div>
+            <Box component="img" src={LIST_IMAGE[8]}></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -172,12 +141,7 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
-              }}
-            ></div>
+            <Box component="img" src={LIST_IMAGE[9]}></Box>
           </div>
         </FadeInOnScroll>
         {/* <div data-action="true" id="GROUP521" className="ladi-element">

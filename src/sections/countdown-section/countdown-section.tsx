@@ -1,5 +1,12 @@
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import React, { useEffect, useState } from "react";
+
+const IMAGE_LIST = [
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9863.JPG",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A0105.JPG",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9388.JPG",
+];
+
 // Simple animated countdown text component
 const AnimatedCountdownText = ({ value }: { value: number }) => {
   const [displayValue, setDisplayValue] = useState(value);
@@ -162,7 +169,7 @@ export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
             <div
               className="ladi-image-background"
               style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+                backgroundImage: `url("${IMAGE_LIST[0]}")`,
                 backgroundSize: "cover",
               }}
             ></div>
@@ -199,7 +206,7 @@ export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
             <div
               className="ladi-image-background"
               style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+                backgroundImage: `url("${IMAGE_LIST[1]}")`,
                 backgroundSize: "cover",
               }}
             ></div>
@@ -215,7 +222,7 @@ export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
             <div
               className="ladi-image-background"
               style={{
-                backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+                backgroundImage: `url("${IMAGE_LIST[2]}")`,
                 backgroundSize: "cover",
               }}
             ></div>

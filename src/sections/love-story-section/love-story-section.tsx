@@ -27,6 +27,9 @@ const LANGUAGE_TEXT = {
   },
 };
 
+const IMAGE_BACKGROUND_URL =
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9503.JPG?updatedAt=1754443034310";
+
 type LoveStorySectionProps = {
   lang?: "vi" | "ko";
 };
@@ -37,7 +40,7 @@ export const LoveStorySection = ({ lang = "vi" }: LoveStorySectionProps) => {
       <div
         className="ladi-section-background"
         style={{
-          backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/my_love.jpg")`,
+          backgroundImage: `url("${IMAGE_BACKGROUND_URL}")`,
         }}
       ></div>
       <div className="ladi-overlay"></div>

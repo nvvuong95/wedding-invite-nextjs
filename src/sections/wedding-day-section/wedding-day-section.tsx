@@ -50,6 +50,9 @@ const LANGUAGE_TEXT = {
   },
 };
 
+const BACKGROUND_IMAGE_URL =
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9047.JPG";
+
 export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
   return (
     <div id="SECTION353" className="ladi-section">
@@ -175,7 +178,7 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                     <div
                       className="ladi-image-background"
                       style={{
-                        backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+                        backgroundImage: `url("${BACKGROUND_IMAGE_URL}")`,
                         backgroundSize: "cover",
                       }}
                     ></div>

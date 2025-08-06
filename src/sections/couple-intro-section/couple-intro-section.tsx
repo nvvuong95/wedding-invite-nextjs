@@ -32,6 +32,15 @@ const LANGUAGE_TEXT = {
   },
 };
 
+const BACKGROUND_IMAGE_URL =
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9178.JPG";
+
+const GROOM_IMAGE_URL =
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9249.jpg?updatedAt=1754471172417";
+
+const BRIDE_IMAGE_URL =
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9349.JPG";
+
 export type CoupleIntroSectionProps = {
   lang?: "vi" | "ko";
 };
@@ -44,7 +53,7 @@ export const CoupleIntroSection = ({
       <div
         className="ladi-section-background"
         style={{
-          backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/my_love.jpg")`,
+          backgroundImage: `url("${BACKGROUND_IMAGE_URL}")`,
         }}
       ></div>
       <div className="ladi-overlay"></div>
@@ -144,7 +153,7 @@ export const CoupleIntroSection = ({
                     <div
                       className="ladi-image-background"
                       style={{
-                        backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+                        backgroundImage: `url("${GROOM_IMAGE_URL}")`,
                       }}
                     ></div>
                   </div>
@@ -182,7 +191,7 @@ export const CoupleIntroSection = ({
                     <div
                       className="ladi-image-background"
                       style={{
-                        backgroundImage: `url("https://ik.imagekit.io/n7dpnbw3v/wedding/IMG_6547.JPG")`,
+                        backgroundImage: `url("${BRIDE_IMAGE_URL}")`,
                       }}
                     ></div>
                   </div>

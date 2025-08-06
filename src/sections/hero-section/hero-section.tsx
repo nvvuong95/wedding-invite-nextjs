@@ -11,6 +11,9 @@ const PARAGRAPH_TEXT = {
   ko: "가장 적절한 순간에, 가장 아름다운 웨딩드레스를 입고, 가장 신뢰할 수 있는 사람에게 시집갑니다.",
 };
 
+const BACKGROUND_IMAGE_URL =
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9373.JPG";
+
 type HeroSectionProps = {
   lang?: "vi" | "ko";
 };
@@ -21,8 +24,7 @@ export const HeroSection = ({ lang = "vi" }: HeroSectionProps) => {
       id="SECTION1"
       className="ladi-section"
       style={{
-        backgroundImage:
-          "url(https://ik.imagekit.io/n7dpnbw3v/wedding/my_love.jpg)",
+        backgroundImage: `url(${BACKGROUND_IMAGE_URL})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
