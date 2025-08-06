@@ -41,6 +41,7 @@ export const LoveStorySection = ({ lang = "vi" }: LoveStorySectionProps) => {
         className="ladi-section-background"
         style={{
           backgroundImage: `url("${IMAGE_BACKGROUND_URL}")`,
+          backgroundSize: "contain",
         }}
       ></div>
       <div className="ladi-overlay"></div>
