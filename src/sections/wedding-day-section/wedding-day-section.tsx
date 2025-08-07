@@ -226,7 +226,6 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
-                    paddingX: 2,
                   }}
                 >
                   <Typography
