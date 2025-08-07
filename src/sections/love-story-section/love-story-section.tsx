@@ -61,7 +61,11 @@ export const LoveStorySection = ({ lang = "vi" }: LoveStorySectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-group">
-            <div id="IMAGE435" className="ladi-element">
+            <div
+              id="IMAGE435"
+              className="ladi-element"
+              style={{ width: "100%" }}
+            >
               <div className="ladi-image">
                 <div
                   className="ladi-image-background"
@@ -90,7 +94,11 @@ export const LoveStorySection = ({ lang = "vi" }: LoveStorySectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-group">
-            <div id="IMAGE436" className="ladi-element">
+            <div
+              id="IMAGE436"
+              className="ladi-element"
+              style={{ width: "100%" }}
+            >
               <div className="ladi-image">
                 <div
                   className="ladi-image-background"
@@ -119,7 +127,11 @@ export const LoveStorySection = ({ lang = "vi" }: LoveStorySectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-group">
-            <div id="IMAGE437" className="ladi-element">
+            <div
+              id="IMAGE437"
+              className="ladi-element"
+              style={{ width: "100%" }}
+            >
               <div className="ladi-image">
                 <div
                   className="ladi-image-background"
