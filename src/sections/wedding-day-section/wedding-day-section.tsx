@@ -75,13 +75,14 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                 height: "100%",
                 position: "relative",
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
                 borderRadius: 2,
-                [theme.breakpoints.up("md")]: {
+                [theme.breakpoints.down("md")]: {
                   display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  flexDirection: "column",
+                  paddingX: 1,
                 },
               })}
             >
