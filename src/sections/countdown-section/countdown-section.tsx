@@ -1,4 +1,5 @@
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 const IMAGE_LIST = [
@@ -166,13 +167,7 @@ export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("${IMAGE_LIST[0]}")`,
-                backgroundSize: "cover",
-              }}
-            ></div>
+            <Box component="img" src={IMAGE_LIST[0]}></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -203,13 +198,7 @@ export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("${IMAGE_LIST[1]}")`,
-                backgroundSize: "cover",
-              }}
-            ></div>
+            <Box component="img" src={IMAGE_LIST[1]}></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -219,13 +208,7 @@ export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("${IMAGE_LIST[2]}")`,
-                backgroundSize: "cover",
-              }}
-            ></div>
+            <Box component="img" src={IMAGE_LIST[2]}></Box>
           </div>
         </FadeInOnScroll>
       </div>

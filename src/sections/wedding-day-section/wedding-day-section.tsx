@@ -1,7 +1,7 @@
 "use client";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
-import { Typography } from "@mui/material";
-import { th } from "framer-motion/client";
+import { Box, Button, Typography } from "@mui/material";
+import { heIL } from "@mui/material/locale";
 import React from "react";
 
 type WeddingDaySectionProps = {
@@ -69,187 +69,320 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-group">
-            <div id="BOX405" className="ladi-element">
-              <div className="ladi-box ladi-transition"></div>
-            </div>
-            <div id="GROUP468" className="ladi-element">
-              <div className="ladi-group">
-                <div id="PARAGRAPH441" className="ladi-element">
-                  <div className="ladi-paragraph">
-                    {LANGUAGE_TEXT[lang].paragraph}
-                  </div>
-                </div>
-                <div id="FORM344" data-config-id="" className="ladi-element">
-                  <div className="ladi-form">
-                    <div id="FORM_ITEM366" className="ladi-element">
-                      <div className="ladi-form-item-container">
-                        <div className="ladi-form-item-background"></div>
-                        <div className="ladi-form-item">
-                          <span tabIndex={1} className="ladi-form-control">
-                            {LANGUAGE_TEXT[lang].guest}
-                          </span>
-                        </div>
-                      </div>
+            <Box
+              sx={(theme) => ({
+                width: "100%",
+                height: "100%",
+                position: "relative",
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: 2,
+                [theme.breakpoints.up("md")]: {
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                },
+              })}
+            >
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: "rgb(0, 0, 0) -10px 15px 20px -15px",
+                  overflow: "hidden",
+                }}
+              >
+                <Box
+                  component="img"
+                  src={BACKGROUND_IMAGE_URL}
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+                <Box
+                  sx={{
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    background: "rgba(0,0,0,0.25)", // Backdrop for the whole image area
+                  }}
+                ></Box>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#fff",
+                    zIndex: 2,
+                    textShadow: "0 2px 8px rgba(0,0,0,0.7)",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: "80px",
+                      fontFamily: "VkJLVNoaXNobpQnJcgudHRm",
+                      lineHeight: 1.2,
+                      color: "rgb(255, 255, 255)",
+                      textAlign: "center",
+                    }}
+                  >
+                    Save
+                    <br />
+                    The Date
+                  </Typography>
+                  <div id="LINE353">
+                    <div className="ladi-line">
+                      <div className="ladi-line-container"></div>
                     </div>
                   </div>
-                </div>
-                <div id="PARAGRAPH442" className="ladi-element">
-                  <div className="ladi-paragraph">
+                  <div id="PARAGRAPH450">
+                    <div className="ladi-paragraph">08 . 11 . 2025</div>
+                  </div>
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  boxShadow: "rgb(0, 0, 0) 10px 15px 20px -15px", // updated box shadow
+                  backgroundColor: "rgb(241, 243, 244)",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  paddingY: "2rem",
+                  gap: 1,
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    paddingX: 2,
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontFamily: "Quicksand, sans-serif",
+                      fontWeight: "bold",
+                      lineHeight: 1.6,
+                      color: "rgb(0, 0, 0)",
+                      textAlign: "center",
+                      fontSize: "20px",
+                    }}
+                  >
+                    {LANGUAGE_TEXT[lang].paragraph}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "Quicksand, sans-serif",
+                      fontSize: "18px",
+                      fontWeight: "bold",
+                      lineHeight: 1.6,
+                      color: "rgb(168, 6, 6)",
+                      textAlign: "center",
+                    }}
+                  >
+                    {LANGUAGE_TEXT[lang].guest}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "Montserrat, sans-serif",
+                      fontSize: "18px",
+                      lineHeight: 1.6,
+                      textAlign: "center",
+                      color: "rgb(0, 0, 0)",
+                    }}
+                  >
                     <span
                       dangerouslySetInnerHTML={{
                         __html: LANGUAGE_TEXT[lang].invitation[0],
                       }}
                     />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="HEADLINE433" className="ladi-element">
-              <Typography
-                className="ladi-headline"
-                sx={(theme) => ({
-                  fontFamily: "var(--ladi-font-family-1)",
-                  fontSize: "1.5rem",
-                  color: "var(--ladi-color-1)",
-                  [theme.breakpoints.up("md")]: { fontSize: "2.5rem" },
-                  textAlign: "center",
-                })}
-              >
-                {LANGUAGE_TEXT[lang].couple}
-              </Typography>
-            </div>
-            <div id="HEADLINE435" className="ladi-element">
-              <h3 className="ladi-headline ladi-transition">
-                {LANGUAGE_TEXT[lang].invitation[1]}
-              </h3>
-            </div>
-            <div data-action="true" id="GROUP462" className="ladi-element">
-              <div
-                className="ladi-group"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <a
-                  href="https://maps.app.goo.gl/JJDLxawCidMtDGvm9"
-                  target="_blank"
-                  id="BUTTON396"
-                  className="ladi-element"
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    paddingX: 2,
+                  }}
                 >
-                  <div className="ladi-button">
-                    <div className="ladi-button-background"></div>
-                    <div
-                      id="BUTTON_SHAPE396"
-                      className="ladi-element ladi-button-shape"
-                    >
-                      <div className="ladi-shape">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="100%"
-                          height="100%"
-                          preserveAspectRatio="none"
-                          viewBox="0 0 24 24"
-                          className=""
-                          fill="rgba(255, 255, 255, 1)"
-                        >
-                          <use xlinkHref="#shape_gFxNLGjWpI"></use>
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      id="BUTTON_TEXT396"
-                      className="ladi-element ladi-button-headline"
-                    >
-                      <p className="ladi-headline">
-                        {LANGUAGE_TEXT[lang].button}
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div id="GROUP464" className="ladi-element">
-              <div className="ladi-group">
-                <div id="IMAGE408" className="ladi-element">
-                  <div className="ladi-image">
-                    <div
-                      className="ladi-image-background"
-                      style={{
-                        backgroundImage: `url("${BACKGROUND_IMAGE_URL}")`,
-                        backgroundSize: "cover",
+                  <Typography
+                    className="ladi-headline"
+                    sx={(theme) => ({
+                      fontFamily: "VVRNIFllbiBUdSdGY",
+                      fontSize: "36px",
+                      color: "var(--ladi-color-1)",
+                      textAlign: "center",
+                      paddingY: 3,
+                    })}
+                  >
+                    {LANGUAGE_TEXT[lang].couple}
+                  </Typography>
+
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      marginTop: "1rem",
+                      gap: 1,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontFamily: "Quicksand, sans-serif",
+                        fontSize: "18px",
+                        fontWeight: "bold",
+                        lineHeight: 1.6,
+                        textAlign: "center",
+                        color: "rgb(205, 7, 7)",
                       }}
-                    ></div>
-                    <div className="ladi-overlay"></div>
-                  </div>
-                </div>
-                <div id="GROUP467" className="ladi-element">
-                  <div className="ladi-group">
-                    <div id="HEADLINE436" className="ladi-element">
-                      <h3 className="ladi-headline">
-                        Save
-                        <br />
-                      </h3>
-                    </div>
-                    <div id="HEADLINE437" className="ladi-element">
-                      <h3 className="ladi-headline">
-                        The Date
-                        <br />
-                      </h3>
-                    </div>
-                    <div id="LINE353" className="ladi-element">
-                      <div className="ladi-line">
-                        <div className="ladi-line-container"></div>
-                      </div>
-                    </div>
-                    <div id="PARAGRAPH450" className="ladi-element">
-                      <div className="ladi-paragraph">08 . 11 . 2025</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="GROUP465" className="ladi-element">
-              <div className="ladi-group">
-                <div id="HEADLINE434" className="ladi-element">
-                  <h3 className="ladi-headline ladi-transition">
-                    {LANGUAGE_TEXT[lang].venue}
-                    <br />
-                  </h3>
-                </div>
-                <div id="PARAGRAPH451" className="ladi-element">
-                  <div className="ladi-paragraph">
-                    {LANGUAGE_TEXT[lang].eventType}
-                  </div>
-                </div>
-                <div id="PARAGRAPH452" className="ladi-element">
-                  <div className="ladi-paragraph">
-                    {LANGUAGE_TEXT[lang].time}
-                  </div>
-                </div>
-                <div id="PARAGRAPH453" className="ladi-element">
-                  <div className="ladi-paragraph">
-                    {LANGUAGE_TEXT[lang].date}
-                  </div>
-                </div>
-                <div id="PARAGRAPH454" className="ladi-element">
-                  <div className="ladi-paragraph">
-                    {LANGUAGE_TEXT[lang].lunarDate}
-                  </div>
-                </div>
-                <div id="PARAGRAPH455" className="ladi-element">
-                  <div className="ladi-paragraph">
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: LANGUAGE_TEXT[lang].address,
+                    >
+                      {LANGUAGE_TEXT[lang].eventType}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontFamily: "Montserrat, sans-serif",
+                        fontSize: "16px",
+                        lineHeight: 1.6,
+                        textAlign: "center",
+                        color: "rgb(0, 0, 0)",
                       }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+                    >
+                      {LANGUAGE_TEXT[lang].time}
+                    </Typography>
+                    <Box>
+                      <Typography
+                        sx={{
+                          fontFamily: "Quicksand, sans-serif",
+                          fontSize: "18px",
+                          fontWeight: "bold",
+                          lineHeight: 1.6,
+                          textAlign: "center",
+                          color: "rgb(205, 7, 7)",
+                        }}
+                      >
+                        {LANGUAGE_TEXT[lang].date}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: "16px",
+                          lineHeight: 1.6,
+                          textAlign: "center",
+                          color: "rgb(0, 0, 0)",
+                          fontStyle: "italic",
+                        }}
+                      >
+                        {LANGUAGE_TEXT[lang].lunarDate}
+                      </Typography>
+                    </Box>
+                    <Typography
+                      sx={{
+                        fontFamily: "Mulish, sans-serif",
+                        fontSize: "18px",
+                        fontWeight: "bold",
+                        lineHeight: 1.6,
+                        textAlign: "center",
+                        color: "rgb(135, 9, 9)",
+                      }}
+                    >
+                      {LANGUAGE_TEXT[lang].venue}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontFamily: "Quicksand, sans-serif",
+                        fontSize: "18px",
+                        lineHeight: 1.6,
+                        textAlign: "center",
+                        color: "rgb(0, 0, 0)",
+                      }}
+                    >
+                      {LANGUAGE_TEXT[lang].address}
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    paddingX: 2,
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontFamily: '"Dancing Script", cursive',
+                      fontSize: "18px",
+                      lineHeight: 1.6,
+                      textAlign: "center",
+                      color: "rgb(0, 0, 0)",
+                    }}
+                  >
+                    {LANGUAGE_TEXT[lang].invitation[1]}
+                  </Typography>
+                  <Button
+                    sx={{
+                      marginTop: "1rem",
+                      backgroundColor: "#989898",
+                      color: "white",
+                      padding: "0.5rem 1.5rem",
+                      fontSize: "15px",
+                      lineHeight: 1.4,
+                      fontFamily: "Quicksand, sans-serif",
+                      textDecoration: "none",
+                    }}
+                    startIcon={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        style={{ display: "block" }}
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"
+                        />
+                      </svg>
+                    }
+                  >
+                    <a
+                      href="https://maps.app.goo.gl/JJDLxawCidMtDGvm9"
+                      target="_blank"
+                      style={{ color: "inherit", textDecoration: "none" }}
+                    >
+                      {LANGUAGE_TEXT[lang].button}
+                    </a>
+                  </Button>
+                </Box>
+              </Box>
+            </Box>
           </div>
         </FadeInOnScroll>
       </div>

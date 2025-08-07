@@ -1,4 +1,5 @@
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import { Box } from "@mui/material";
 
 const LANGUAGE_TEXT = {
   ko: {
@@ -150,12 +151,7 @@ export const CoupleIntroSection = ({
                 </div>
                 <div data-action="true" id="IMAGE422" className="ladi-element">
                   <div className="ladi-image">
-                    <div
-                      className="ladi-image-background"
-                      style={{
-                        backgroundImage: `url("${GROOM_IMAGE_URL}")`,
-                      }}
-                    ></div>
+                    <Box component="img" src={GROOM_IMAGE_URL}></Box>
                   </div>
                 </div>
               </div>
@@ -188,12 +184,7 @@ export const CoupleIntroSection = ({
                 </div>
                 <div data-action="true" id="IMAGE423" className="ladi-element">
                   <div className="ladi-image">
-                    <div
-                      className="ladi-image-background"
-                      style={{
-                        backgroundImage: `url("${BRIDE_IMAGE_URL}")`,
-                      }}
-                    ></div>
+                    <Box component="img" src={BRIDE_IMAGE_URL}></Box>
                   </div>
                 </div>
               </div>
