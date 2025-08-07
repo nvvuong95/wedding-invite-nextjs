@@ -69,6 +69,7 @@ const LANGUAGE_TEXT: Record<string, any> = {
     minutes: "Phút",
     seconds: "Giây",
     weddingMessage: "Là ngày cưới của chúng mình! 💍🎉",
+    couple: "Văn Vương & Ngọc Nhung",
   },
   ko: {
     days: "일",
@@ -76,6 +77,7 @@ const LANGUAGE_TEXT: Record<string, any> = {
     minutes: "분",
     seconds: "초",
     weddingMessage: "우리의 결혼식 날이에요! 💍🎉",
+    couple: "Van Vuong & Ngoc Nhung",
   },
 };
 
@@ -177,7 +179,7 @@ export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
           className="ladi-element"
         >
           <h3 className="ladi-headline">
-            Văn Vương&nbsp; &amp; Ngọc Nhung
+            {LANGUAGE_TEXT[lang].couple}
             <br />
           </h3>
         </FadeInOnScroll>
