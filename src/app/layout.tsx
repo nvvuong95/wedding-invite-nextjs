@@ -31,7 +31,6 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/style_page.css" />
         <link rel="stylesheet" href="/css/style_element.css" />
         <link rel="stylesheet" href="/css/style_lazyload.css" />
-        <link rel="stylesheet" href="/css/style.css" />
         <meta charSet="UTF-8" />
         <title>Thiệp mời Vương - Nhung</title>
         <meta httpEquiv="Cache-Control" content="no-cache" />

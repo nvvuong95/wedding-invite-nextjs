@@ -7,7 +7,7 @@ const AUTH_KEY = "wedding_invite_authorized";
 
 export default function Home() {
   const [code, setCode] = useState("");
-  const [authorized, setAuthorized] = useState(true);
+  const [authorized, setAuthorized] = useState(false);
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Home() {
     if (typeof window !== "undefined") {
       // Kiểm tra trạng thái xác thực
       const isAuth = sessionStorage.getItem(AUTH_KEY) === "true";
-      // setAuthorized(isAuth);
+      setAuthorized(isAuth);
       setIsReady(true);
     }
   }, []);

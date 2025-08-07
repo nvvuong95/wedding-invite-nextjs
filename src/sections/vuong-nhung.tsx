@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import "./style.css";
+import React from "react";
 import { HeroSection } from "./hero-section/hero-section";
 import { AudioSection } from "./audio-section/audio";
 import { FloatingNav } from "./floating-nav/floating-nav";
