@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vuong Nhung Wedding Invite",
+  title: "Thiệp mời Vương - Nhung",
   description: "Thiệp mời Vương - Nhung",
 };
 
