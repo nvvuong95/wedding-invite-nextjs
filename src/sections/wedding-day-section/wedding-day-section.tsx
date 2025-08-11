@@ -1,7 +1,6 @@
 "use client";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import { Box, Button, Typography } from "@mui/material";
-import { heIL } from "@mui/material/locale";
 import React from "react";
 
 type WeddingDaySectionProps = {
@@ -10,18 +9,19 @@ type WeddingDaySectionProps = {
 
 const LANGUAGE_TEXT = {
   vi: {
+    wedding_invitation: "Thiệp mời báo hỉ",
     headline: "Wedding Day",
     paragraph: "TRÂN TRỌNG KÍNH MỜI",
     button: "Chỉ đường",
     venue: "Tại : Queen Plaza Tân Bình",
     date: "Thứ 7, ngày 08 tháng 11 năm 2025",
-    time: "Tổ chức vào lúc 18 giờ 00 phút",
+    time: "Vào lúc 18:00",
     address:
       "Sảnh Queen 8 - Tầng 3, 91B2 Phạm Văn Hai, Phường 3, Tân Bình, Hồ Chí Minh",
     dateDetail: "Thứ 7, ngày 08 tháng 11 năm 2025",
     lunarDate: "(Tức ngày 19 tháng 09 năm Ất Tỵ)",
     invitation: [
-      "Tới dự bữa Tiệc <b>Báo Hỉ</b> cùng gia đình chúng tôi",
+      "Đến dự buổi tiệc chung vui cùng gia đình chúng tôi",
       "Sự hiện diện của quý khách là niềm vinh dự cho gia đình chúng tôi!",
       "Chúng tôi rất mong được đón tiếp quý khách tại buổi tiệc đặc biệt này.",
     ],
@@ -30,6 +30,7 @@ const LANGUAGE_TEXT = {
     couple: "Văn Vương & Ngọc Nhung",
   },
   ko: {
+    wedding_invitation: "결혼식 초대장",
     headline: "결혼식 날",
     paragraph: "진심으로 초대합니다",
     button: "길찾기",
@@ -53,6 +54,9 @@ const LANGUAGE_TEXT = {
 const BACKGROUND_IMAGE_URL =
   "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9047.JPG";
 
+const BACKGROUND_THIEP_CUOI_URL =
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/bg-thiep-cuoi.png";
+
 export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
   return (
     <div id="SECTION353" className="ladi-section">
@@ -72,7 +76,7 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
             <Box
               sx={(theme) => ({
                 width: "100%",
-                height: "100%",
+                aspectRatio: { 26: 35 },
                 position: "relative",
                 display: "flex",
                 flexDirection: "row",
@@ -83,6 +87,9 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                   display: "flex",
                   flexDirection: "column",
                   paddingX: 1,
+                },
+                [theme.breakpoints.up("md")]: {
+                  height: "100%",
                 },
               })}
             >
@@ -158,18 +165,27 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                 </Box>
               </Box>
               <Box
-                sx={{
+                sx={(theme) => ({
                   width: "100%",
-                  height: "100%",
+                  aspectRatio: { 26: 35 },
                   boxShadow: "rgb(0, 0, 0) 10px 15px 20px -15px", // updated box shadow
                   backgroundColor: "rgb(241, 243, 244)",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  paddingY: "2rem",
+                  paddingY: "5rem",
                   gap: 1,
-                }}
+                  backgroundImage: `url(${BACKGROUND_THIEP_CUOI_URL})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  [theme.breakpoints.up("md")]: {
+                    height: "100%",
+                  },
+                  [theme.breakpoints.down("md")]: {
+                    paddingY: "4rem",
+                  },
+                })}
               >
                 <Box
                   sx={{
@@ -181,45 +197,95 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                   }}
                 >
                   <Typography
-                    sx={{
+                    sx={(theme) => ({
                       fontFamily: "Quicksand, sans-serif",
-                      fontWeight: "bold",
+                      fontWeight: 500,
+                      lineHeight: 1.6,
+                      color: "rgb(0, 0, 0)",
+                      textAlign: "center",
+                      fontSize: "24px",
+                      [theme.breakpoints.down("md")]: {
+                        fontSize: "20px",
+                      },
+                    })}
+                  >
+                    {LANGUAGE_TEXT[lang].wedding_invitation}
+                  </Typography>
+                </Box>
+
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    paddingX: 2,
+                  }}
+                >
+                  <Typography
+                    className="ladi-headline"
+                    sx={(theme) => ({
+                      fontFamily: "VVRNIFllbiBUdSdGY",
+                      fontSize: "36px",
+                      color: "rgb(205, 99, 99)",
+                      textAlign: "center",
+                      paddingY: 3,
+                      fontWeight: 500,
+                      [theme.breakpoints.down("md")]: {
+                        fontSize: "28px",
+                      },
+                    })}
+                  >
+                    {LANGUAGE_TEXT[lang].couple}
+                  </Typography>
+
+                  <Typography
+                    sx={(theme) => ({
+                      fontFamily: "Quicksand, sans-serif",
                       lineHeight: 1.6,
                       color: "rgb(0, 0, 0)",
                       textAlign: "center",
                       fontSize: "20px",
-                    }}
+                      [theme.breakpoints.down("md")]: {
+                        fontSize: "16px",
+                      },
+                    })}
                   >
                     {LANGUAGE_TEXT[lang].paragraph}
                   </Typography>
                   <Typography
-                    sx={{
+                    sx={(theme) => ({
                       fontFamily: "Quicksand, sans-serif",
                       fontSize: "18px",
                       fontWeight: "bold",
                       lineHeight: 1.6,
                       color: "rgb(168, 6, 6)",
-                      textAlign: "center",
-                    }}
+                      [theme.breakpoints.down("md")]: {
+                        fontSize: "14px",
+                      },
+                    })}
                   >
                     {LANGUAGE_TEXT[lang].guest}
                   </Typography>
-                  <Typography
-                    sx={{
-                      fontFamily: "Montserrat, sans-serif",
-                      fontSize: "18px",
-                      lineHeight: 1.6,
-                      textAlign: "center",
-                      color: "rgb(0, 0, 0)",
-                    }}
-                  >
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: LANGUAGE_TEXT[lang].invitation[0],
-                      }}
-                    />
-                  </Typography>
                 </Box>
+                <Typography
+                  sx={(theme) => ({
+                    fontFamily: "Montserrat, sans-serif",
+                    fontSize: "16px",
+                    lineHeight: 1.6,
+                    textAlign: "center",
+                    color: "rgb(0, 0, 0)",
+                    [theme.breakpoints.down("md")]: {
+                      fontSize: "12px",
+                    },
+                  })}
+                >
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: LANGUAGE_TEXT[lang].invitation[0],
+                    }}
+                  />
+                </Typography>
                 <Box
                   sx={{
                     display: "flex",
@@ -228,19 +294,6 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                     justifyContent: "center",
                   }}
                 >
-                  <Typography
-                    className="ladi-headline"
-                    sx={(theme) => ({
-                      fontFamily: "VVRNIFllbiBUdSdGY",
-                      fontSize: "36px",
-                      color: "var(--ladi-color-1)",
-                      textAlign: "center",
-                      paddingY: 3,
-                    })}
-                  >
-                    {LANGUAGE_TEXT[lang].couple}
-                  </Typography>
-
                   <Box
                     sx={{
                       display: "flex",
@@ -248,81 +301,84 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                       alignItems: "center",
                       justifyContent: "center",
                       marginTop: "1rem",
-                      gap: 1,
                     }}
                   >
                     <Typography
-                      sx={{
-                        fontFamily: "Quicksand, sans-serif",
-                        fontSize: "18px",
+                      sx={(theme) => ({
+                        fontFamily: "Mulish, sans-serif",
+                        fontSize: "16px",
                         fontWeight: "bold",
                         lineHeight: 1.6,
                         textAlign: "center",
-                        color: "rgb(205, 7, 7)",
-                      }}
+                        [theme.breakpoints.down("md")]: {
+                          fontSize: "12px",
+                        },
+                        color: "rgb(135, 9, 9)",
+                      })}
                     >
-                      {LANGUAGE_TEXT[lang].eventType}
+                      {LANGUAGE_TEXT[lang].venue}
                     </Typography>
                     <Typography
-                      sx={{
+                      sx={(theme) => ({
+                        fontFamily: "Quicksand, sans-serif",
+                        fontSize: "16px",
+                        lineHeight: 1.6,
+                        textAlign: "center",
+                        color: "rgb(0, 0, 0)",
+                        maxWidth: "80%",
+                        [theme.breakpoints.down("md")]: {
+                          fontSize: "12px",
+                        },
+                      })}
+                    >
+                      {LANGUAGE_TEXT[lang].address}
+                    </Typography>
+                    <Typography
+                      sx={(theme) => ({
                         fontFamily: "Montserrat, sans-serif",
                         fontSize: "16px",
                         lineHeight: 1.6,
                         textAlign: "center",
                         color: "rgb(0, 0, 0)",
-                      }}
+                        [theme.breakpoints.down("md")]: {
+                          fontSize: "12px",
+                        },
+                      })}
                     >
                       {LANGUAGE_TEXT[lang].time}
                     </Typography>
                     <Box>
                       <Typography
-                        sx={{
+                        sx={(theme) => ({
                           fontFamily: "Quicksand, sans-serif",
-                          fontSize: "18px",
+                          fontSize: "16px",
                           fontWeight: "bold",
                           lineHeight: 1.6,
                           textAlign: "center",
+                          [theme.breakpoints.down("md")]: {
+                            fontSize: "12px",
+                          },
                           color: "rgb(205, 7, 7)",
-                        }}
+                        })}
                       >
                         {LANGUAGE_TEXT[lang].date}
                       </Typography>
                       <Typography
-                        sx={{
+                        sx={(theme) => ({
                           fontFamily: "Montserrat, sans-serif",
-                          fontSize: "16px",
+                          fontSize: "14px",
                           lineHeight: 1.6,
                           textAlign: "center",
                           color: "rgb(0, 0, 0)",
                           fontStyle: "italic",
-                        }}
+                          [theme.breakpoints.down("md")]: {
+                            fontSize: "12px",
+                          },
+                        })}
                       >
                         {LANGUAGE_TEXT[lang].lunarDate}
                       </Typography>
                     </Box>
-                    <Typography
-                      sx={{
-                        fontFamily: "Mulish, sans-serif",
-                        fontSize: "18px",
-                        fontWeight: "bold",
-                        lineHeight: 1.6,
-                        textAlign: "center",
-                        color: "rgb(135, 9, 9)",
-                      }}
-                    >
-                      {LANGUAGE_TEXT[lang].venue}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontFamily: "Quicksand, sans-serif",
-                        fontSize: "18px",
-                        lineHeight: 1.6,
-                        textAlign: "center",
-                        color: "rgb(0, 0, 0)",
-                      }}
-                    >
-                      {LANGUAGE_TEXT[lang].address}
-                    </Typography>
                   </Box>
                 </Box>
                 <Box
@@ -335,18 +391,22 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                   }}
                 >
                   <Typography
-                    sx={{
+                    sx={(theme) => ({
                       fontFamily: '"Dancing Script", cursive',
                       fontSize: "18px",
                       lineHeight: 1.6,
                       textAlign: "center",
                       color: "rgb(0, 0, 0)",
-                    }}
+                      [theme.breakpoints.down("md")]: {
+                        fontSize: "16px",
+                      },
+                      maxWidth: "70%",
+                    })}
                   >
                     {LANGUAGE_TEXT[lang].invitation[1]}
                   </Typography>
                   <Button
-                    sx={{
+                    sx={(theme) => ({
                       marginTop: "1rem",
                       backgroundColor: "#989898",
                       color: "white",
@@ -355,7 +415,10 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                       lineHeight: 1.4,
                       fontFamily: "Quicksand, sans-serif",
                       textDecoration: "none",
-                    }}
+                      [theme.breakpoints.down("md")]: {
+                        fontSize: "13px",
+                      },
+                    })}
                     startIcon={
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
