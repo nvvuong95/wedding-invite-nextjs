@@ -46,6 +46,8 @@ export const Iconify = forwardRef<SVGSVGElement, IconifyProps>((props, ref) => {
   );
 });
 
+Iconify.displayName = "Iconify";
+
 // https://iconify.design/docs/iconify-icon/disable-cache.html
 // disableCache('local');
 
