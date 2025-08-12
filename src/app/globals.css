@@ -5,6 +5,9 @@
   --foreground: #171717;
 }
 
+/* lightbox */
+@import '../components/lightbox/styles.css';
+
 @font-face {
   font-family: "UTM Yen Tu";
   src: url("https://w.ladicdn.com/5c728619c417ab07e5194baa/utm-yen-tu-20240502170713-sukzp.ttf") format("truetype");

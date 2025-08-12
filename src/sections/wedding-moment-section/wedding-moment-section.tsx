@@ -1,4 +1,5 @@
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import { useLightbox } from "@/context/lightbox-context";
 import { Box } from "@mui/material";
 
 const LANGUAGE_TEXT = {
@@ -32,6 +33,8 @@ const LIST_IMAGE = [
 export const WeddingMomentSection = ({
   lang = "vi",
 }: WeddingMomentSectionProps) => {
+  const { onDisplay } = useLightbox();
+
   return (
     <div id="SECTION359" className="ladi-section">
       <div className="ladi-section-background"></div>
@@ -51,7 +54,17 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <Box component="img" src={LIST_IMAGE[0]}></Box>
+            <Box
+              component="img"
+              src={LIST_IMAGE[0]}
+              sx={{ cursor: "pointer" }}
+              onClick={() =>
+                onDisplay({
+                  index: 0,
+                  slides: LIST_IMAGE.map((src) => ({ src })),
+                })
+              }
+            ></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -61,7 +74,17 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <Box component="img" src={LIST_IMAGE[1]}></Box>
+            <Box
+              component="img"
+              src={LIST_IMAGE[1]}
+              sx={{ cursor: "pointer" }}
+              onClick={() =>
+                onDisplay({
+                  index: 1,
+                  slides: LIST_IMAGE.map((src) => ({ src })),
+                })
+              }
+            ></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -71,7 +94,17 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <Box component="img" src={LIST_IMAGE[2]}></Box>
+            <Box
+              component="img"
+              src={LIST_IMAGE[2]}
+              sx={{ cursor: "pointer" }}
+              onClick={() =>
+                onDisplay({
+                  index: 2,
+                  slides: LIST_IMAGE.map((src) => ({ src })),
+                })
+              }
+            ></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -81,7 +114,17 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <Box component="img" src={LIST_IMAGE[3]}></Box>
+            <Box
+              component="img"
+              src={LIST_IMAGE[3]}
+              sx={{ cursor: "pointer" }}
+              onClick={() =>
+                onDisplay({
+                  index: 3,
+                  slides: LIST_IMAGE.map((src) => ({ src })),
+                })
+              }
+            ></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -91,7 +134,17 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <Box component="img" src={LIST_IMAGE[4]}></Box>
+            <Box
+              component="img"
+              src={LIST_IMAGE[4]}
+              sx={{ cursor: "pointer" }}
+              onClick={() =>
+                onDisplay({
+                  index: 4,
+                  slides: LIST_IMAGE.map((src) => ({ src })),
+                })
+              }
+            ></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -101,7 +154,17 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <Box component="img" src={LIST_IMAGE[5]}></Box>
+            <Box
+              component="img"
+              src={LIST_IMAGE[5]}
+              sx={{ cursor: "pointer" }}
+              onClick={() =>
+                onDisplay({
+                  index: 5,
+                  slides: LIST_IMAGE.map((src) => ({ src })),
+                })
+              }
+            ></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -111,7 +174,17 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <Box component="img" src={LIST_IMAGE[6]}></Box>
+            <Box
+              component="img"
+              src={LIST_IMAGE[6]}
+              sx={{ cursor: "pointer" }}
+              onClick={() =>
+                onDisplay({
+                  index: 6,
+                  slides: LIST_IMAGE.map((src) => ({ src })),
+                })
+              }
+            ></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -121,7 +194,17 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <Box component="img" src={LIST_IMAGE[7]}></Box>
+            <Box
+              component="img"
+              src={LIST_IMAGE[7]}
+              sx={{ cursor: "pointer" }}
+              onClick={() =>
+                onDisplay({
+                  index: 7,
+                  slides: LIST_IMAGE.map((src) => ({ src })),
+                })
+              }
+            ></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -131,7 +214,17 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <Box component="img" src={LIST_IMAGE[8]}></Box>
+            <Box
+              component="img"
+              src={LIST_IMAGE[8]}
+              sx={{ cursor: "pointer" }}
+              onClick={() =>
+                onDisplay({
+                  index: 8,
+                  slides: LIST_IMAGE.map((src) => ({ src })),
+                })
+              }
+            ></Box>
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
@@ -141,7 +234,17 @@ export const WeddingMomentSection = ({
           className="ladi-element"
         >
           <div className="ladi-image">
-            <Box component="img" src={LIST_IMAGE[9]}></Box>
+            <Box
+              component="img"
+              src={LIST_IMAGE[9]}
+              sx={{ cursor: "pointer" }}
+              onClick={() =>
+                onDisplay({
+                  index: 9,
+                  slides: LIST_IMAGE.map((src) => ({ src })),
+                })
+              }
+            ></Box>
           </div>
         </FadeInOnScroll>
         {/* <div data-action="true" id="GROUP521" className="ladi-element">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import WeddingInviteScripts from "@/components/WeddingInviteScript";
+import { LightboxProvider } from "@/context/lightbox-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -79,7 +80,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`lazyload ${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <LightboxProvider>{children}</LightboxProvider>
       </body>
       <WeddingInviteScripts />
     </html>
