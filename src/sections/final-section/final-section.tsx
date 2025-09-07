@@ -63,6 +63,7 @@ export const FinalSection = ({ lang = "vi" }: IFinalSectionProps) => {
               sx={{
                 transform: "scale(1.2)",
                 transformOrigin: "right",
+                backgroundSize: "cover",
                 // backgroundColor: "#FEEBEA",
               }}
             />
