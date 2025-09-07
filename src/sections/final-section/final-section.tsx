@@ -15,7 +15,7 @@ const LANGUAGE_TEXT = {
 };
 
 const IMAGE_AVATAR_URL =
-  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A0221.JPG?updatedAt=1757234826940";
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A0221-removebg-preview.png?updatedAt=1757246800997";
 
 export const FinalSection = ({ lang = "vi" }: IFinalSectionProps) => {
   return (
@@ -48,7 +48,14 @@ export const FinalSection = ({ lang = "vi" }: IFinalSectionProps) => {
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll delay={1} id="IMAGE440" className="ladi-element">
-          <div className="ladi-image">
+          <div
+            className="ladi-image"
+            style={{
+              backgroundImage: 'url("/images/1746.jpg")',
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+          >
             <Box
               component="img"
               src={`${IMAGE_AVATAR_URL}`}
@@ -56,6 +63,7 @@ export const FinalSection = ({ lang = "vi" }: IFinalSectionProps) => {
               sx={{
                 transform: "scale(1.2)",
                 transformOrigin: "right",
+                // backgroundColor: "#FEEBEA",
               }}
             />
           </div>
