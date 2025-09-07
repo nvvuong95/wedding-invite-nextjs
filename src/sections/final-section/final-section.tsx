@@ -1,4 +1,5 @@
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import { Box } from "@mui/material";
 
 type IFinalSectionProps = {
   lang?: "vi" | "ko";
@@ -48,12 +49,15 @@ export const FinalSection = ({ lang = "vi" }: IFinalSectionProps) => {
         </FadeInOnScroll>
         <FadeInOnScroll delay={1} id="IMAGE440" className="ladi-element">
           <div className="ladi-image">
-            <div
-              className="ladi-image-background"
-              style={{
-                backgroundImage: `url("${IMAGE_AVATAR_URL}")`,
+            <Box
+              component="img"
+              src={`${IMAGE_AVATAR_URL}`}
+              alt="image avatar"
+              sx={{
+                transform: "scale(1.2)",
+                transformOrigin: "right",
               }}
-            ></div>
+            />
           </div>
         </FadeInOnScroll>
         <FadeInOnScroll
