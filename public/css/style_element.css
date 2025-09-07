@@ -3668,10 +3668,12 @@
 	}
 
 	#IMAGE440>.ladi-image>.ladi-image-background {
-		width: 230px;
-		height: 345px;
-		top: -50px;
-		left: 1px;
+		transform: translate(10px, 10px) !important;
+		width: 275px;
+		height: 312px;
+		top: -22px;
+		left: -55px;
+		object-fit: scale-down;
 	}
 
 	#IMAGE441 {

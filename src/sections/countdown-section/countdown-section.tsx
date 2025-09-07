@@ -3,9 +3,9 @@ import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 const IMAGE_LIST = [
-  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9863.JPG",
-  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A0105.JPG",
-  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9388.JPG",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9863.JPG?updatedAt=1757234817782",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A0105.JPG?updatedAt=1757234821831",
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9086.JPG?updatedAt=1757234842876",
 ];
 
 // Simple animated countdown text component
@@ -210,7 +210,17 @@ export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
           className="ladi-element"
         >
           <div className="ladi-image">
-            <Box component="img" src={IMAGE_LIST[2]}></Box>
+            <Box
+              sx={(theme) => ({
+                position: "absolute",
+                top: -156,
+                [theme.breakpoints.down("sm")]: {
+                  top: -98,
+                },
+              })}
+              component="img"
+              src={IMAGE_LIST[2]}
+            ></Box>
           </div>
         </FadeInOnScroll>
       </div>

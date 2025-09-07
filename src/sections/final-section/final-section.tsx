@@ -14,7 +14,7 @@ const LANGUAGE_TEXT = {
 };
 
 const IMAGE_AVATAR_URL =
-  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A0105.JPG?updatedAt=1754442935068";
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A0221.JPG?updatedAt=1757234826940";
 
 export const FinalSection = ({ lang = "vi" }: IFinalSectionProps) => {
   return (

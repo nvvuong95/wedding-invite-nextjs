@@ -37,10 +37,10 @@ const BACKGROUND_IMAGE_URL =
   "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9178.JPG";
 
 const GROOM_IMAGE_URL =
-  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9249.jpg?updatedAt=1754471172417";
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A0234.JPG?updatedAt=1757234824570";
 
 const BRIDE_IMAGE_URL =
-  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9349.JPG";
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9349.JPG?updatedAt=1757234812628";
 
 export type CoupleIntroSectionProps = {
   lang?: "vi" | "ko";

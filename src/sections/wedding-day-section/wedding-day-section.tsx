@@ -52,7 +52,7 @@ const LANGUAGE_TEXT = {
 };
 
 const BACKGROUND_IMAGE_URL =
-  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9047.JPG";
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9178.JPG?updatedAt=1757234813855";
 
 const BACKGROUND_THIEP_CUOI_URL =
   "https://ik.imagekit.io/n7dpnbw3v/wedding/bg-thiep-cuoi.png";

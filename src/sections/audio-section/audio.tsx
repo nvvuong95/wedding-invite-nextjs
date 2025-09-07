@@ -40,7 +40,7 @@ export const AudioSection = ({ lang = "vi" }: AudioSectionProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (audioRef.current && !isPlaying) {
-        audioRef.current.play().catch(() => {});
+        // audioRef.current.play().catch(() => {});
       }
     }, 3000);
     return () => clearTimeout(timer);

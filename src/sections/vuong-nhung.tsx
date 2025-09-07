@@ -41,7 +41,7 @@ const VuongNhungWeddingInvitation = ({
       <CoupleIntroSection lang={lang} />
 
       {/* Wedding Moments Section */}
-      <WeddingMomentSection lang={lang} />
+      {/* <WeddingMomentSection lang={lang} /> */}
 
       {/* Love Story Section */}
       <LoveStorySection lang={lang} />
