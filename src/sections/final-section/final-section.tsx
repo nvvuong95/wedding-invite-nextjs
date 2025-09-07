@@ -54,6 +54,7 @@ export const FinalSection = ({ lang = "vi" }: IFinalSectionProps) => {
               backgroundImage: 'url("/images/1746.jpg")',
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
+              backgroundSize: "cover",
             }}
           >
             <Box
@@ -63,7 +64,6 @@ export const FinalSection = ({ lang = "vi" }: IFinalSectionProps) => {
               sx={{
                 transform: "scale(1.2)",
                 transformOrigin: "right",
-                backgroundSize: "cover",
                 // backgroundColor: "#FEEBEA",
               }}
             />
