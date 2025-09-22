@@ -4,18 +4,24 @@ import FadeInOnScroll from "@/components/FadeInOnScroll";
 const HEADLINE_TEXT = {
   vi: "Văn Vương & Ngọc Nhung",
   ko: "Van Vuong & Ngoc Nhung",
+  "nha-gai": "Văn Vương & Ngọc Nhung",
+  "nha-trai": "Văn Vương & Ngọc Nhung",
 };
 
 const PARAGRAPH_TEXT = {
   vi: "Ở thời điểm phù hợp nhất, mặc lên người bộ váy cưới đẹp nhất, gả cho người đáng tin cậy nhất.",
   ko: "가장 적절한 순간에, 가장 아름다운 웨딩드레스를 입고, 가장 신뢰할 수 있는 사람에게 시집갑니다.",
+  "nha-gai":
+    "Ở thời điểm phù hợp nhất, mặc lên người bộ váy cưới đẹp nhất, gả cho người đáng tin cậy nhất.",
+  "nha-trai":
+    "Ở thời điểm phù hợp nhất, mặc lên người bộ váy cưới đẹp nhất, gả cho người đáng tin cậy nhất.",
 };
 
 const BACKGROUND_IMAGE_URL =
   "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9372.JPG";
 
 type HeroSectionProps = {
-  lang?: "vi" | "ko";
+  lang?: "vi" | "ko" | "nha-gai" | "nha-trai";
 };
 
 export const HeroSection = ({ lang = "vi" }: HeroSectionProps) => {

@@ -2,7 +2,7 @@ import FadeInOnScroll from "@/components/FadeInOnScroll";
 import { Box } from "@mui/material";
 
 type IFinalSectionProps = {
-  lang?: "vi" | "ko";
+  lang?: "vi" | "ko" | "nha-gai" | "nha-trai";
 };
 
 const LANGUAGE_TEXT = {
@@ -11,6 +11,12 @@ const LANGUAGE_TEXT = {
   },
   ko: {
     title: "Van Vuong & Ngoc Nhung",
+  },
+  "nha-gai": {
+    title: "Văn Vương & Ngọc Nhung",
+  },
+  "nha-trai": {
+    title: "Văn Vương & Ngọc Nhung",
   },
 };
 

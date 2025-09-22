@@ -3,7 +3,7 @@ import { Box, IconButton } from "@mui/material";
 import { Icon } from "@iconify/react";
 
 type AudioSectionProps = {
-  lang?: "vi" | "ko";
+  lang?: "vi" | "ko" | "nha-gai" | "nha-trai";
 };
 
 const LANGUAGE_TEXT = {
@@ -18,6 +18,18 @@ const LANGUAGE_TEXT = {
     music: "음악",
     play: "음악 재생",
     playing: "재생 중",
+  },
+  "nha-gai": {
+    loading: "Đang tải thiệp mời...",
+    music: "Nhạc nền",
+    play: "Nhấn để phát nhạc",
+    playing: "Đang phát",
+  },
+  "nha-trai": {
+    loading: "Đang tải thiệp mời...",
+    music: "Nhạc nền",
+    play: "Nhấn để phát nhạc",
+    playing: "Đang phát",
   },
 };
 

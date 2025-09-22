@@ -23,7 +23,37 @@ const LANGUAGE_TEXT = {
     groomFamily: "Nhà Trai",
     brideFamily: "Nhà Gái",
     groomParents: "Ông: Nguyễn Văn Thành<br /> Bà: Nguyễn Thị Mai",
-    brideParents: "Bà: Nguyễn Thị Liên",
+    brideParents: "Bà: Nguyễn Thị Kim Liên",
+    groomIntroduction:
+      "Đối với chúng mình hôn nhân không phải là đích đến cuối của tình yêu mà là khởi đầu của hạnh phúc.",
+    brideIntroduction:
+      "Ở thời điểm phù hợp nhất, khoác lên mình bộ váy cưới đẹp nhất, gả cho người đáng tin cậy nhất, là anh.",
+    groomName: "Văn Vương",
+    brideName: "Ngọc Nhung",
+  },
+  "nha-gai": {
+    headline: "Giới thiệu cặp đôi",
+    groom: "Văn Vương",
+    bride: "Ngọc Nhung",
+    groomFamily: "Nhà Trai",
+    brideFamily: "Nhà Gái",
+    groomParents: "Ông: Nguyễn Văn Thành<br /> Bà: Nguyễn Thị Mai",
+    brideParents: "Bà: Nguyễn Thị Kim Liên",
+    groomIntroduction:
+      "Đối với chúng mình hôn nhân không phải là đích đến cuối của tình yêu mà là khởi đầu của hạnh phúc.",
+    brideIntroduction:
+      "Ở thời điểm phù hợp nhất, khoác lên mình bộ váy cưới đẹp nhất, gả cho người đáng tin cậy nhất, là anh.",
+    groomName: "Văn Vương",
+    brideName: "Ngọc Nhung",
+  },
+  "nha-trai": {
+    headline: "Giới thiệu cặp đôi",
+    groom: "Văn Vương",
+    bride: "Ngọc Nhung",
+    groomFamily: "Nhà Trai",
+    brideFamily: "Nhà Gái",
+    groomParents: "Ông: Nguyễn Văn Thành<br /> Bà: Nguyễn Thị Mai",
+    brideParents: "Bà: Nguyễn Thị Kim Liên",
     groomIntroduction:
       "Đối với chúng mình hôn nhân không phải là đích đến cuối của tình yêu mà là khởi đầu của hạnh phúc.",
     brideIntroduction:
@@ -43,7 +73,7 @@ const BRIDE_IMAGE_URL =
   "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9349.JPG?updatedAt=1757234812628";
 
 export type CoupleIntroSectionProps = {
-  lang?: "vi" | "ko";
+  lang?: "vi" | "ko" | "nha-gai" | "nha-trai";
 };
 
 export const CoupleIntroSection = ({

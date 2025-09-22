@@ -44,9 +44,20 @@ const AnimatedCountdownText = ({ value }: { value: number }) => {
   );
 };
 
-const targetDate = new Date("2025-11-08T18:00:00");
+const getCountdown = (lang: string) => {
+  let targetDate = new Date("2025-11-08T18:00:00");
+  switch (lang) {
+    case "nha-gai":
+      targetDate = new Date("2025-10-25T11:00:00");
+      break;
+    case "nha-trai":
+      targetDate = new Date("2025-10-26T11:00:00");
+      break;
+    default:
+      targetDate = new Date("2025-11-08T18:00:00");
+      break;
+  }
 
-const getCountdown = () => {
   const now = new Date();
   const diff = targetDate.getTime() - now.getTime();
 
@@ -59,7 +70,7 @@ const getCountdown = () => {
 };
 
 type CountdownSectionProps = {
-  lang?: "vi" | "ko";
+  lang?: "vi" | "ko" | "nha-gai" | "nha-trai";
 };
 
 const LANGUAGE_TEXT: Record<string, any> = {
@@ -68,7 +79,7 @@ const LANGUAGE_TEXT: Record<string, any> = {
     hours: "Giờ",
     minutes: "Phút",
     seconds: "Giây",
-    weddingMessage: "Là ngày cưới của chúng mình! 💍🎉",
+    weddingMessage: "Là tới ngày cưới của chúng mình! 💍🎉",
     couple: "Văn Vương & Ngọc Nhung",
   },
   ko: {
@@ -79,17 +90,31 @@ const LANGUAGE_TEXT: Record<string, any> = {
     weddingMessage: "우리의 결혼식 날이에요! 💍🎉",
     couple: "Van Vuong & Ngoc Nhung",
   },
+  "nha-gai": {
+    days: "Ngày",
+    hours: "Giờ",
+    minutes: "Phút",
+    seconds: "Giây",
+    weddingMessage: "Là tới ngày cưới của chúng mình! 💍🎉",
+  },
+  "nha-trai": {
+    days: "Ngày",
+    hours: "Giờ",
+    minutes: "Phút",
+    seconds: "Giây",
+    weddingMessage: "Là tới ngày cưới của chúng mình! 💍🎉",
+  },
 };
 
 export const CountdownSection = ({ lang = "vi" }: CountdownSectionProps) => {
-  const [countdown, setCountdown] = useState(getCountdown());
+  const [countdown, setCountdown] = useState(getCountdown(lang));
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCountdown(getCountdown());
+      setCountdown(getCountdown(lang));
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [lang]);
 
   return (
     <div id="SECTION356" className="ladi-section">

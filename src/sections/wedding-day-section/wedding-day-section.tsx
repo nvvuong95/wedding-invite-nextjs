@@ -4,50 +4,94 @@ import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 
 type WeddingDaySectionProps = {
-  lang?: "vi" | "ko";
+  lang?: "vi" | "ko" | "nha-gai" | "nha-trai";
 };
 
 const LANGUAGE_TEXT = {
-  vi: {
-    wedding_invitation: "Thiệp mời báo hỉ",
+  "nha-gai": {
     headline: "Wedding Day",
     paragraph: "TRÂN TRỌNG KÍNH MỜI",
     button: "Chỉ đường",
-    venue: "Tại : Queen Plaza Tân Bình",
+    venue: "Tại : Nhà Hàng tiệc cưới Chu Chánh",
+    date: "Thứ 7, ngày 25 tháng 10 năm 2025",
+    time: "Tiệc tổ chức vào lúc 11 giờ 00 phút",
+    address: "TDP 5, Xã Cát Tiên 2, Tỉnh Lâm Đồng",
+    dateDetail: "Thứ 7, ngày 25 tháng 10 năm 2025",
+    lunarDate: "(Tức ngày 05 tháng 09 năm Ất Tỵ)",
+    invitation: [
+      'Tới dự buổi tiệc <b style="color: rgb(168, 6, 6)">Lễ Vu Quy</b> chung vui cùng gia đình chúng tôi',
+      "Sự hiện diện của quý khách là niềm vinh dự cho gia đình chúng tôi!",
+      "Chúng tôi rất mong được đón tiếp quý khách tại buổi tiệc đặc biệt này.",
+    ],
+    eventType: "TIỆC NHÀ GÁI",
+    guest: "Quý khách",
+    couple: "Văn Vương & Ngọc Nhung",
+    saveTheDate: "25 . 10 . 2025",
+    googleMapUrl: "https://maps.app.goo.gl/8xDXM226cs97U7CH6",
+  },
+  "nha-trai": {
+    headline: "Wedding Day",
+    paragraph: "TRÂN TRỌNG KÍNH MỜI",
+    button: "Chỉ đường",
+    venue: "Tại : Nhà hàng tiệc cưới Minh Hồng",
+    date: "Chủ Nhật, ngày 26 tháng 10 năm 2025",
+    time: "Tiệc tổ chức vào lúc 11 giờ 00 phút",
+    address: "Thôn Sơn Hải, Xã Cát Tiên 2, Tỉnh Lâm Đồng",
+    dateDetail: "Chủ Nhật, ngày 26 tháng 10 năm 2025",
+    lunarDate: "(Tức ngày 06 tháng 09 năm Ất Tỵ)",
+    invitation: [
+      'Tới dự buổi tiệc <b style="color: rgb(168, 6, 6)">Lễ Thành Hôn</b> chung vui cùng gia đình chúng tôi',
+      "Sự hiện diện của quý khách là niềm vinh dự cho gia đình chúng tôi!",
+      "Chúng tôi rất mong được đón tiếp quý khách tại buổi tiệc đặc biệt này.",
+    ],
+    eventType: "TIỆC NHÀ TRAI",
+    guest: "Quý khách",
+    couple: "Văn Vương & Ngọc Nhung",
+    saveTheDate: "26 . 10 . 2025",
+    googleMapUrl: "https://maps.app.goo.gl/5wyMnpjHrbcJDdj6A",
+  },
+  vi: {
+    headline: "Wedding Day",
+    paragraph: "TRÂN TRỌNG KÍNH MỜI",
+    button: "Chỉ đường",
+    venue: "Tại : Sảnh Queen 8 - Queen Plaza Tân Bình",
     date: "Thứ 7, ngày 08 tháng 11 năm 2025",
-    time: "Vào lúc 18:00",
+    time: "Tiệc tổ chức vào lúc 18 giờ 00 phút",
     address:
-      "Sảnh Queen 8 - Tầng 3, 91B2 Đường Phạm Văn Hai,\nPhường Tân Hòa, TP. Hồ Chí Minh",
+      "Tầng 3, 91B2 Đường Phạm Văn Hai,\nPhường Tân Hòa, TP. Hồ Chí Minh",
     dateDetail: "Thứ 7, ngày 08 tháng 11 năm 2025",
     lunarDate: "(Tức ngày 19 tháng 09 năm Ất Tỵ)",
     invitation: [
-      "Đến dự buổi tiệc chung vui cùng gia đình chúng tôi",
+      'Tới dự buổi tiệc <b style="color: rgb(168, 6, 6)">Báo Hỉ</b> chung vui cùng gia đình chúng tôi',
       "Sự hiện diện của quý khách là niềm vinh dự cho gia đình chúng tôi!",
       "Chúng tôi rất mong được đón tiếp quý khách tại buổi tiệc đặc biệt này.",
     ],
     eventType: "TIỆC BÁO HỈ",
     guest: "Quý khách",
     couple: "Văn Vương & Ngọc Nhung",
+    saveTheDate: "08 . 11 . 2025",
+    googleMapUrl: "https://maps.app.goo.gl/JJDLxawCidMtDGvm9",
   },
   ko: {
-    wedding_invitation: "결혼식 초대장",
     headline: "결혼식 날",
     paragraph: "진심으로 초대합니다",
     button: "길찾기",
-    venue: "장소 : 퀸 플라자 탄빈",
+    venue: "장소: 퀸 홀 8 - 퀸 플라자 떤빈",
     date: "토요일, 2025년 11월 8일",
-    time: "오후 6시에 시작합니다",
-    address: "퀸 8홀 - 3층, 91B2 팜 반 하이, 푸옝 3, 탄빈, 호치민",
+    time: "연회는 오후 6시 00분에 시작됩니다",
+    address: "3층, 91B2 팜반하이 거리,\n떤호아 동, 호치민시",
     dateDetail: "2025년 11월 8일 토요일",
     lunarDate: "(음력 2025년 9월 19일)",
     invitation: [
-      "저희 가족과 함께 <b>결혼식</b>에 참석해 주세요",
-      "귀하의 참석은 저희 가족에게 큰 영광입니다!",
-      "이 특별한 날에 귀하를 모시게 되어 매우 기쁩니다.",
+      '저희 가족과 함께하는 <b style="color: rgb(168, 6, 6)">결혼식</b> 축하 자리에 초대합니다.',
+      "귀하의 참석은 저희 가족에게 큰 영광이 될 것입니다!",
+      "이 특별한 자리에 귀하를 모시기를 진심으로 기대합니다.",
     ],
     eventType: "결혼식",
     guest: "귀하",
     couple: "Van Vuong & Ngoc Nhung",
+    saveTheDate: "08 . 11 . 2025",
+    googleMapUrl: "https://maps.app.goo.gl/JJDLxawCidMtDGvm9",
   },
 };
 
@@ -160,7 +204,9 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                     </div>
                   </div>
                   <div id="PARAGRAPH450">
-                    <div className="ladi-paragraph">08 . 11 . 2025</div>
+                    <div className="ladi-paragraph">
+                      {LANGUAGE_TEXT[lang].saveTheDate}
+                    </div>
                   </div>
                 </Box>
               </Box>
@@ -199,49 +245,6 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                   <Typography
                     sx={(theme) => ({
                       fontFamily: "Quicksand, sans-serif",
-                      fontWeight: 500,
-                      lineHeight: 1.6,
-                      color: "rgb(0, 0, 0)",
-                      textAlign: "center",
-                      fontSize: "24px",
-                      [theme.breakpoints.down("md")]: {
-                        fontSize: "20px",
-                      },
-                    })}
-                  >
-                    {LANGUAGE_TEXT[lang].wedding_invitation}
-                  </Typography>
-                </Box>
-
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    paddingX: 2,
-                  }}
-                >
-                  <Typography
-                    className="ladi-headline"
-                    sx={(theme) => ({
-                      fontFamily: "VVRNIFllbiBUdSdGY",
-                      fontSize: "36px",
-                      color: "rgb(205, 99, 99)",
-                      textAlign: "center",
-                      paddingY: 3,
-                      fontWeight: 500,
-                      [theme.breakpoints.down("md")]: {
-                        fontSize: "28px",
-                      },
-                    })}
-                  >
-                    {LANGUAGE_TEXT[lang].couple}
-                  </Typography>
-
-                  <Typography
-                    sx={(theme) => ({
-                      fontFamily: "Quicksand, sans-serif",
                       lineHeight: 1.6,
                       color: "rgb(0, 0, 0)",
                       textAlign: "center",
@@ -263,29 +266,56 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                       [theme.breakpoints.down("md")]: {
                         fontSize: "14px",
                       },
+                      paddingY: 2,
                     })}
                   >
                     {LANGUAGE_TEXT[lang].guest}
                   </Typography>
-                </Box>
-                <Typography
-                  sx={(theme) => ({
-                    fontFamily: "Montserrat, sans-serif",
-                    fontSize: "16px",
-                    lineHeight: 1.6,
-                    textAlign: "center",
-                    color: "rgb(0, 0, 0)",
-                    [theme.breakpoints.down("md")]: {
-                      fontSize: "12px",
-                    },
-                  })}
-                >
-                  <span
+
+                  <Typography
+                    sx={(theme) => ({
+                      fontFamily: "Montserrat, sans-serif",
+                      fontSize: "14px",
+                      lineHeight: 1.6,
+                      textAlign: "center",
+                      color: "rgb(0, 0, 0)",
+                      [theme.breakpoints.down("md")]: {
+                        fontSize: "12px",
+                      },
+                    })}
                     dangerouslySetInnerHTML={{
                       __html: LANGUAGE_TEXT[lang].invitation[0],
                     }}
                   />
-                </Typography>
+                </Box>
+
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    paddingX: 2,
+                  }}
+                >
+                  <Typography
+                    className="ladi-headline"
+                    sx={(theme) => ({
+                      fontFamily: "VVRNIFllbiBUdSdGY",
+                      fontSize: "40px",
+                      color: "rgb(205, 99, 99)",
+                      textAlign: "center",
+                      paddingY: 3,
+                      fontWeight: 500,
+                      [theme.breakpoints.down("md")]: {
+                        fontSize: "28px",
+                      },
+                    })}
+                  >
+                    {LANGUAGE_TEXT[lang].couple}
+                  </Typography>
+                </Box>
+
                 <Box
                   sx={{
                     display: "flex",
@@ -303,36 +333,6 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                       marginTop: "1rem",
                     }}
                   >
-                    <Typography
-                      sx={(theme) => ({
-                        fontFamily: "Mulish, sans-serif",
-                        fontSize: "16px",
-                        fontWeight: "bold",
-                        lineHeight: 1.6,
-                        textAlign: "center",
-                        [theme.breakpoints.down("md")]: {
-                          fontSize: "12px",
-                        },
-                        color: "rgb(135, 9, 9)",
-                      })}
-                    >
-                      {LANGUAGE_TEXT[lang].venue}
-                    </Typography>
-                    <Typography
-                      sx={(theme) => ({
-                        fontFamily: "Quicksand, sans-serif",
-                        fontSize: "16px",
-                        lineHeight: 1.6,
-                        textAlign: "center",
-                        color: "rgb(0, 0, 0)",
-                        maxWidth: "80%",
-                        [theme.breakpoints.down("md")]: {
-                          fontSize: "12px",
-                        },
-                      })}
-                    >
-                      {LANGUAGE_TEXT[lang].address}
-                    </Typography>
                     <Typography
                       sx={(theme) => ({
                         fontFamily: "Montserrat, sans-serif",
@@ -379,6 +379,36 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                         {LANGUAGE_TEXT[lang].lunarDate}
                       </Typography>
                     </Box>
+                    <Typography
+                      sx={(theme) => ({
+                        fontFamily: "Mulish, sans-serif",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                        lineHeight: 1.6,
+                        textAlign: "center",
+                        [theme.breakpoints.down("md")]: {
+                          fontSize: "12px",
+                        },
+                        color: "rgb(135, 9, 9)",
+                        paddingY: 1,
+                      })}
+                    >
+                      {LANGUAGE_TEXT[lang].venue}
+                    </Typography>
+                    <Typography
+                      sx={(theme) => ({
+                        fontFamily: "Quicksand, sans-serif",
+                        fontSize: "14px",
+                        lineHeight: 1.6,
+                        textAlign: "center",
+                        color: "rgb(0, 0, 0)",
+                        [theme.breakpoints.down("md")]: {
+                          fontSize: "10px",
+                        },
+                      })}
+                    >
+                      {LANGUAGE_TEXT[lang].address}
+                    </Typography>
                   </Box>
                 </Box>
                 <Box
@@ -436,7 +466,7 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                     }
                   >
                     <a
-                      href="https://maps.app.goo.gl/JJDLxawCidMtDGvm9"
+                      href={LANGUAGE_TEXT[lang].googleMapUrl}
                       target="_blank"
                       style={{ color: "inherit", textDecoration: "none" }}
                     >

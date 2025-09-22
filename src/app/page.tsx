@@ -222,7 +222,7 @@ export default function Home() {
         animation: "fadeInInvitation 1.2s",
       }}
     >
-      <VuongNhungWeddingInvitation />
+      <VuongNhungWeddingInvitation lang="vi" />
       <style>{`
         @keyframes fadeInInvitation {
           from { opacity: 0; }

@@ -25,13 +25,37 @@ const LANGUAGE_TEXT = {
     weddingDayDesc:
       "Duyên phận là một điều vô cùng thú vị. Đến một lúc nào đó, tất cả những bối rối trong cuộc đời sẽ có câu trả lời. Đó sẽ là lúc mọi chuyện lại về đúng chỗ của nó. Những người sinh ra dành cho nhau, rồi sẽ nhìn thấy nhau và nắm lấy nhau trong cuộc đời này.",
   },
+  "nha-gai": {
+    headline: "Love Story",
+    meetingFate: "GẶP GỠ VÀ DUYÊN PHẬN",
+    yearsTogether: "NĂM THÁNG YÊU NHAU",
+    weddingDay: "NGÀY MÌNH CHUNG ĐÔI",
+    meetingFateDesc:
+      "Tình yêu là sự rung cảm của một tâm hồn khi gặp một tâm hồn đồng điệu, là sự hòa nhịp của hai trái tim, làm người ta nhìn thấy mọi vật tươi đẹp hơn. Khoảng cách giữa chúng ta nếu là một ngàn bước thì chỉ cần em đi bước đầu tiên, anh sẽ là người đi về phía em chín trăm chín chín bước còn lại.",
+    yearsTogetherDesc:
+      "Hạnh phúc là khi gặp được người tuyệt nhất ở những giai đoạn đẹp nhất của tuổi thanh xuân và cùng nhìn nhau già đi, vì nhau mà cố gắng xây dựng một tương lai sung túc, tốt đẹp.",
+    weddingDayDesc:
+      "Duyên phận là một điều vô cùng thú vị. Đến một lúc nào đó, tất cả những bối rối trong cuộc đời sẽ có câu trả lời. Đó sẽ là lúc mọi chuyện lại về đúng chỗ của nó. Những người sinh ra dành cho nhau, rồi sẽ nhìn thấy nhau và nắm lấy nhau trong cuộc đời này.",
+  },
+  "nha-trai": {
+    headline: "Love Story",
+    meetingFate: "GẶP GỠ VÀ DUYÊN PHẬN",
+    yearsTogether: "NĂM THÁNG YÊU NHAU",
+    weddingDay: "NGÀY MÌNH CHUNG ĐÔI",
+    meetingFateDesc:
+      "Tình yêu là sự rung cảm của một tâm hồn khi gặp một tâm hồn đồng điệu, là sự hòa nhịp của hai trái tim, làm người ta nhìn thấy mọi vật tươi đẹp hơn. Khoảng cách giữa chúng ta nếu là một ngàn bước thì chỉ cần em đi bước đầu tiên, anh sẽ là người đi về phía em chín trăm chín chín bước còn lại.",
+    yearsTogetherDesc:
+      "Hạnh phúc là khi gặp được người tuyệt nhất ở những giai đoạn đẹp nhất của tuổi thanh xuân và cùng nhìn nhau già đi, vì nhau mà cố gắng xây dựng một tương lai sung túc, tốt đẹp.",
+    weddingDayDesc:
+      "Duyên phận là một điều vô cùng thú vị. Đến một lúc nào đó, tất cả những bối rối trong cuộc đời sẽ có câu trả lời. Đó sẽ là lúc mọi chuyện lại về đúng chỗ của nó. Những người sinh ra dành cho nhau, rồi sẽ nhìn thấy nhau và nắm lấy nhau trong cuộc đời này.",
+  },
 };
 
 const IMAGE_BACKGROUND_URL =
   "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9503.JPG?updatedAt=1754443034310";
 
 type LoveStorySectionProps = {
-  lang?: "vi" | "ko";
+  lang?: "vi" | "ko" | "nha-gai" | "nha-trai";
 };
 
 export const LoveStorySection = ({ lang = "vi" }: LoveStorySectionProps) => {

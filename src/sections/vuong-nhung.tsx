@@ -15,7 +15,7 @@ import { FinalSection } from "./final-section/final-section";
 // Types for component props
 interface WeddingInvitationProps {
   className?: string;
-  lang?: "vi" | "ko";
+  lang?: "vi" | "ko" | "nha-gai" | "nha-trai";
 }
 
 const VuongNhungWeddingInvitation = ({
