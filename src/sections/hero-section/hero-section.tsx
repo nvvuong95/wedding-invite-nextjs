@@ -12,7 +12,7 @@ const PARAGRAPH_TEXT = {
 };
 
 const BACKGROUND_IMAGE_URL =
-  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/4M8A9373.JPG";
+  "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9372.JPG";
 
 type HeroSectionProps = {
   lang?: "vi" | "ko";
