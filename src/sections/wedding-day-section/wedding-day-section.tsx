@@ -17,7 +17,7 @@ const LANGUAGE_TEXT = {
     date: "Thứ 7, ngày 08 tháng 11 năm 2025",
     time: "Vào lúc 18:00",
     address:
-      "Sảnh Queen 8 - Tầng 3, 91B2 Phạm Văn Hai, Phường 3, Tân Bình, Hồ Chí Minh",
+      "Sảnh Queen 8 - Tầng 3, 91B2 Đường Phạm Văn Hai,\nPhường Tân Hòa, TP. Hồ Chí Minh",
     dateDetail: "Thứ 7, ngày 08 tháng 11 năm 2025",
     lunarDate: "(Tức ngày 19 tháng 09 năm Ất Tỵ)",
     invitation: [
@@ -114,7 +114,7 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                     objectFit: "cover",
                   }}
                 />
-                <Box
+                {/* <Box
                   sx={{
                     content: '""',
                     position: "absolute",
@@ -124,7 +124,7 @@ export const WeddingDaySection = ({ lang = "vi" }: WeddingDaySectionProps) => {
                     height: "100%",
                     background: "rgba(0,0,0,0.5)", // Backdrop for the whole image area
                   }}
-                ></Box>
+                ></Box> */}
                 <Box
                   sx={{
                     position: "absolute",
