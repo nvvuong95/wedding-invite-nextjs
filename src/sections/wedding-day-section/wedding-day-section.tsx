@@ -12,10 +12,10 @@ const LANGUAGE_TEXT = {
     headline: "Wedding Day",
     paragraph: "TRÂN TRỌNG KÍNH MỜI",
     button: "Chỉ đường",
-    venue: "Tại : Nhà Hàng tiệc cưới Chu Chánh",
+    venue: "Tại : Nhà Hàng Chu Chánh (Hà Đa)",
     date: "Thứ 7, ngày 25 tháng 10 năm 2025",
     time: "Tiệc tổ chức vào lúc 11 giờ 00 phút",
-    address: "TDP 5, Xã Cát Tiên 2, Tỉnh Lâm Đồng",
+    address: "Thôn Cát Lâm 2, Xã Cát Tiên 2, Tỉnh Lâm Đồng",
     dateDetail: "Thứ 7, ngày 25 tháng 10 năm 2025",
     lunarDate: "(Tức ngày 05 tháng 09 năm Ất Tỵ)",
     invitation: [
@@ -27,7 +27,7 @@ const LANGUAGE_TEXT = {
     guest: "Quý khách",
     couple: "Văn Vương & Ngọc Nhung",
     saveTheDate: "25 . 10 . 2025",
-    googleMapUrl: "https://maps.app.goo.gl/8xDXM226cs97U7CH6",
+    googleMapUrl: "https://maps.app.goo.gl/piv1EirGjPcEN5EE8",
   },
   "nha-trai": {
     headline: "Wedding Day",
