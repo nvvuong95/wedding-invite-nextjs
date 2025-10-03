@@ -52,8 +52,18 @@ export default function RootLayout({
           property="og:image"
           content="https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9600.JPG"
         />
-        <meta property="og:title" content="Vương Nhung" />
+        <meta property="og:title" content="Thiệp cưới Vương & Nhung" />
+        <meta
+          property="og:description"
+          content="Trân trọng kính mời bạn đến tham dự đám cưới của chúng tôi."
+        />
+        <meta
+          property="og:image"
+          content="https://wedding.vuongnguyen.info/images/wedding-invite.jpg"
+        />
+        <meta property="og:url" content="https://wedding.vuongnguyen.info" />
         <meta property="og:type" content="website" />
+
         <meta name="format-detection" content="telephone=no" />
         <meta name="revisit-after" content="days" />
         <link rel="dns-prefetch" />
