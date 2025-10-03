@@ -1,6 +1,22 @@
 "use client";
 
 import VuongNhungWeddingInvitation from "@/sections/vuong-nhung";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Thiệp cưới Vương & Nhung",
+  openGraph: {
+    title: "Thiệp cưới Vương & Nhung",
+    images: [
+      {
+        url: "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9600.JPG",
+        width: 1200,
+        height: 630,
+        alt: "Thiệp cưới Vương & Nhung",
+      },
+    ],
+  },
+};
 
 export default function Home() {
   if (typeof window === "undefined") {

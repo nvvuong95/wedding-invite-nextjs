@@ -48,6 +48,10 @@ export default function RootLayout({
             `,
           }}
         />
+        <meta
+          property="og:image"
+          content="https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9600.JPG"
+        />
         <meta property="og:title" content="Vương Nhung" />
         <meta property="og:type" content="website" />
         <meta name="format-detection" content="telephone=no" />
