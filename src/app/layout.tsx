@@ -16,10 +16,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Thiệp cưới Vương & Nhung",
-  description: "Trân trọng kính mời bạn đến tham dự đám cưới của chúng tôi.",
+  description:
+    "Trân trọng kính mời quý khách tới tham dự đám cưới của chúng tôi.",
   openGraph: {
     title: "Thiệp cưới Vương & Nhung",
-    description: "Trân trọng kính mời bạn đến tham dự đám cưới của chúng tôi.",
+    description:
+      "Trân trọng kính mời quý khách tới tham dự đám cưới của chúng tôi.",
     url: "https://wedding.vuongnguyen.info",
     type: "website",
     images: [
@@ -34,7 +36,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Thiệp cưới Vương & Nhung",
-    description: "Trân trọng kính mời bạn đến tham dự đám cưới của chúng tôi.",
+    description:
+      "Trân trọng kính mời quý khách tới tham dự đám cưới của chúng tôi.",
     images: [
       "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9372.JPG?tr=w-1200,h-630,fo-auto",
     ],
