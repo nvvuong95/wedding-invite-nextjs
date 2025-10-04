@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9600.JPG?tr=w-1200,h-630,fo-auto",
+        url: "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9372.JPG?tr=w-1200,h-630,fo-auto",
         width: 1200,
         height: 630,
         alt: "Thiệp cưới Vương & Nhung",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Thiệp cưới Vương & Nhung",
     description: "Trân trọng kính mời bạn đến tham dự đám cưới của chúng tôi.",
     images: [
-      "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9600.JPG?tr=w-1200,h-630,fo-auto",
+      "https://ik.imagekit.io/n7dpnbw3v/wedding/pre_wedding/Latest/4M8A9372.JPG?tr=w-1200,h-630,fo-auto",
     ],
   },
 };
